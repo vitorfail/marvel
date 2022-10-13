@@ -1,13 +1,16 @@
 import './App.css';
 import Cabecalho from './componentes/Cabecalho';
-import { useState } from 'react';
+import React, { useState } from 'react';
 import ListaHq from './ListaHq';
+import Rodape from './Rodape/Rodape';
+import Sacola from './icon/sacola.png'
+import { StoreContext } from './Context';
 
 function App() {
-  const [listahq, setlistahq] = useState([])
-  const [imagemBanner, setimagemBanner] = useState('')
-  const [tituloBanner, settituloBanner] =useState('Marvel Previes')
-  const [descricaoBanner, setdescricaoBanner] = useState("When Hank Pym - a.k.a. Ant-Man - is tapped by U.S. Intelligence to infiltrate an international spy ring that has been siphoning secrets out of Washington, the diminutive hero jumps at the chance - unaware that he's being used as a pawn in a larger game of espionage.\r32 PGS./PARENTAL ADVISORY...$2.99")
+  const {price, setprice, listahq, setlistahq, imagemBanner, setimagemBanner, 
+    tituloBanner, settituloBanner, descricaoBanner, 
+    setdescricaoBanner, criadoresBanner, setcriadoresBanner} = React.useContext(StoreContext)
+
   useState(() =>  {
     const load = async () =>{
       var lista = await ListaHq.homelist()
@@ -17,7 +20,12 @@ function App() {
       setimagemBanner(lista[0].items[random].thumbnail.path+'/portrait_incredible.jpg')
       settituloBanner(lista[0].items[random].title)
       setdescricaoBanner(lista[0].items[random].description)
-  
+      if(lista[0].items[random].creators !== undefined){
+        setcriadoresBanner(lista[0].items[random].creators.items)
+      }
+      if(lista[0].items[random].prices.price !== undefined){
+        setprice(lista[0].items[random].prices.price)  
+      }
     }
     load()
   })
@@ -30,18 +38,32 @@ function App() {
               <div className='conteudo--descri'>
                 <h1>{tituloBanner}</h1>
                 <h3>{descricaoBanner}</h3>
+                <div className='conteudo--criadores'>
+                  <h2>Criadores:</h2>
+                  {criadoresBanner.map((item, index) => 
+                  (<h3 key={index}>
+                    {item.name},
+                  </h3>))}
+                </div>
+                <div className='conteudo--price'>
+                  <h1>R$ {price.toFixed(2)}</h1>
+                </div>
               </div>
             </div>
             <div className='conteudo--lista'>
               {listahq.map((item, index) => (
-                 <div key={index} className='conteudo--lista--item' style={{
-                  background:'url('+item.thumbnail.path+'/portrait_incredible.jpg'+')',
-                  backgroundPosition:'center', backgroundRepeat:'no-repeat', backgroundSize:'cover'}}>
-                  <h3>{item.description}</h3>
+                 <div key={index} className='conteudo--lista--item'>
+                    <p>{item.title}</p>
+                    <img src={item.thumbnail.path+'/portrait_incredible.jpg'}></img>
+                    <div className='conteudo--item--price'>
+                        <h2>R$ {item.prices[0].price}</h2>
+                        <img className={item.id} src={Sacola}></img>
+                    </div>                    
                 </div>
               ))}
             </div>
         </div>
+        <Rodape></Rodape>
     </div>
   );
 }
