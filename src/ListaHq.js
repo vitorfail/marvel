@@ -5,25 +5,22 @@ async function puxar_dados(d){
     var dados = []
     await axios.get('http://gateway.marvel.com/v1/public/comics?'+d+ApiKey)
     .then(res => {
-        dados = res.data.data.results
+        for(var i =0; i < res.data.data.results.length; i++){
+            if(res.data.data.results[i].description !== ""){
+                dados.push(res.data.data.results[i])
+            }
+        }
     })
     return dados
 }
-async function pesquisar_comic(d){
-    var dados = []
-    await axios.get('http://gateway.marvel.com/v1/public/comics/'+d+'?'+ApiKey)
-    .then(res => {
-        dados = res.data.data.results[0]
-    })
-    return dados
-}
+
 
 export default{
     homelist: async ()=>{
         return [
             {
                 titulo:"lista-inicial",
-                items: await puxar_dados('limit=13')
+                items: await puxar_dados('limit=23')
             }
         ]
     }

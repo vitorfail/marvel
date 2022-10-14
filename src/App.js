@@ -5,12 +5,13 @@ import ListaHq from './ListaHq';
 import Rodape from './Rodape/Rodape';
 import Sacola from './icon/sacola.png'
 import { StoreContext } from './Context';
+import ApiKey from './Axios'
+import axios from 'axios'
 
 function App() {
   const {price, setprice, listahq, setlistahq, imagemBanner, setimagemBanner, 
     tituloBanner, settituloBanner, descricaoBanner, 
     setdescricaoBanner, criadoresBanner, setcriadoresBanner} = React.useContext(StoreContext)
-
   useState(() =>  {
     const load = async () =>{
       var lista = await ListaHq.homelist()
@@ -29,12 +30,33 @@ function App() {
     }
     load()
   })
+  function pesquisar_comic(id_hq){
+    var dados = []
+    axios.get('http://gateway.marvel.com/v1/public/comics/'+id_hq+'?'+ApiKey)
+    .then(res => {
+        dados = res.data.data.results[0]
+        setimagemBanner(dados.thumbnail.path+'/portrait_incredible.jpg')
+        settituloBanner(dados.title)
+        setdescricaoBanner(dados.description)
+        if(dados.creators.items !== undefined){
+          setcriadoresBanner(dados.creators.items)
+        }
+        if(dados.prices.price !== undefined){
+          setprice(dados.prices.price)  
+        }
+        window.scrollTo({ top: 0, behavior: 'smooth' });
+  
+    })
+    .catch( eror => {
+      console.log(eror)
+    })
+  }
   return (
     <div className="App">
         <Cabecalho></Cabecalho>
         <div className='conteudo'>
             <div className='conteudo--banner'>
-              <img src={imagemBanner}></img>
+              <img alt='banner' src={imagemBanner}></img>
               <div className='conteudo--descri'>
                 <h1>{tituloBanner}</h1>
                 <h3>{descricaoBanner}</h3>
@@ -50,14 +72,17 @@ function App() {
                 </div>
               </div>
             </div>
+            <div className='conteudo--titulo'>
+              <h1>Quadrinhos em destaque:</h1>
+            </div>
             <div className='conteudo--lista'>
               {listahq.map((item, index) => (
                  <div key={index} className='conteudo--lista--item'>
                     <p>{item.title}</p>
-                    <img src={item.thumbnail.path+'/portrait_incredible.jpg'}></img>
+                    <img alt='thumb' src={item.thumbnail.path+'/portrait_incredible.jpg'}></img>
                     <div className='conteudo--item--price'>
                         <h2>R$ {item.prices[0].price}</h2>
-                        <img className={item.id} src={Sacola}></img>
+                        <img alt='sacola' className={item.id} onClick={(event) => pesquisar_comic(event.target.className)} src={Sacola}></img>
                     </div>                    
                 </div>
               ))}

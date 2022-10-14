@@ -1,11 +1,20 @@
 header{
+    transition: all ease 0.2s;
+    box-shadow: 4px 4px 12px rgba(0, 0, 0, 0.486);
     z-index: 99;
     display: flex;
     justify-content: center;
     align-items: center;
-    height: 45px;
+    height: 75px;
     width: 100%;
     position: fixed;
-    background: black;
+    background: rgb(237 28 36);
     color: white;
+}
+header.exibir{
+    background: black;
+}
+header img{
+    height: 70%;
+    width: 150px;
 }
