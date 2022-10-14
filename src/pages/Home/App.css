@@ -17,6 +17,23 @@
   width: 280px;
   height: 69%;
 }
+.conteudo--price{
+  padding-left: 12px;
+  padding-right: 12px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.conteudo--price img{
+  border-radius: 23px;
+  background: #00c206;
+  height: 65px;
+  width: 65px;
+}
+.conteudo--price img:hover{
+  cursor: pointer;
+  background: #84ff88;
+}
 .conteudo--descri{
   width: 55%;
   height: 69%;
@@ -131,5 +148,14 @@
   }
   .conteudo--titulo h2{
     text-align: center;
+  }
+  .conteudo--banner {
+    height: 1084px;
+  }
+  .conteudo--descri .descri{
+    margin-top: 19px;
+    margin-bottom: 19px;
+    max-height: 240px;
+    overflow-y: auto;
   }
 }

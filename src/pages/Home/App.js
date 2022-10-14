@@ -1,18 +1,21 @@
 import './App.css';
-import Cabecalho from './componentes/Cabecalho';
+import Cabecalho from '../../componentes/Cabecalho';
 import React, { useState } from 'react';
-import ListaHq from './ListaHq';
-import Rodape from './Rodape/Rodape';
-import Sacola from './icon/sacola.png'
-import { StoreContext } from './Context';
-import ApiKey from './Axios'
+import ListaHq from '../../ListaHq';
+import Rodape from '../../componentes/Rodape/Rodape';
+import Sacola from '../../icon/sacola.png'
+import { StoreContext } from '../../Context';
+import ApiKey from '../../Axios'
 import axios from 'axios'
+import { useHistory } from 'react-router-dom';
 
 function App() {
+  const history = useHistory()
   const {price, setprice, listahq, setlistahq, imagemBanner, setimagemBanner, 
     tituloBanner, settituloBanner, descricaoBanner, 
-    setdescricaoBanner, criadoresBanner, setcriadoresBanner} = React.useContext(StoreContext)
+    setdescricaoBanner, criadoresBanner, setcriadoresBanner, idBanner, setidBanner} = React.useContext(StoreContext)
   useState(() =>  {
+    // o load serve para definir a hq que vai ficar no banner principal, escolhendo uma aleatoriamente
     const load = async () =>{
       var lista = await ListaHq.homelist()
       setlistahq(lista[0].items)
@@ -27,8 +30,10 @@ function App() {
       if(lista[0].items[random].prices.price !== undefined){
         setprice(lista[0].items[random].prices.price)  
       }
+      setidBanner(lista[0].items[random].id)
     }
     load()
+
   })
   function pesquisar_comic(id_hq){
     var dados = []
@@ -59,7 +64,7 @@ function App() {
               <img alt='banner' src={imagemBanner}></img>
               <div className='conteudo--descri'>
                 <h1>{tituloBanner}</h1>
-                <h3>{descricaoBanner}</h3>
+                <h3 className='descri'>{descricaoBanner}</h3>
                 <div className='conteudo--criadores'>
                   <h2>Criadores:</h2>
                   {criadoresBanner.map((item, index) => 
@@ -69,6 +74,7 @@ function App() {
                 </div>
                 <div className='conteudo--price'>
                   <h1>R$ {price.toFixed(2)}</h1>
+                  <img onClick={() => history.push('/venda')} alt='sacola' src={Sacola}></img>
                 </div>
               </div>
             </div>

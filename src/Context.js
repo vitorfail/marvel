@@ -9,11 +9,13 @@ export const Provider = (props) =>{
     const [tituloBanner, settituloBanner] =useState('')
     const [descricaoBanner, setdescricaoBanner] = useState("")
     const [criadoresBanner, setcriadoresBanner]= useState([{name:'Desconhecido'}])
+    const [idBanner, setidBanner] = useState("")
+
   
     return(
         <StoreContext.Provider value={{price, setprice, listahq, setlistahq, 
             imagemBanner, setimagemBanner, tituloBanner, settituloBanner, descricaoBanner
-            , setdescricaoBanner, criadoresBanner, setcriadoresBanner}}>
+            , setdescricaoBanner, criadoresBanner, setcriadoresBanner, idBanner, setidBanner}}>
             {props.children}
         </StoreContext.Provider>
     )
