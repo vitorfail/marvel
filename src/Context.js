@@ -3,6 +3,7 @@ import React, {useState} from "react";
 export const  StoreContext = React.createContext({})
 
 export const Provider = (props) =>{
+    const [popup, setpopup] = useState(false)
     const [price, setprice] = useState(0)
     const [listahq, setlistahq] = useState([])
     const [imagemBanner, setimagemBanner] = useState('')
@@ -15,7 +16,7 @@ export const Provider = (props) =>{
     return(
         <StoreContext.Provider value={{price, setprice, listahq, setlistahq, 
             imagemBanner, setimagemBanner, tituloBanner, settituloBanner, descricaoBanner
-            , setdescricaoBanner, criadoresBanner, setcriadoresBanner, idBanner, setidBanner}}>
+            , setdescricaoBanner, criadoresBanner, setcriadoresBanner, idBanner, setidBanner, popup, setpopup}}>
             {props.children}
         </StoreContext.Provider>
     )

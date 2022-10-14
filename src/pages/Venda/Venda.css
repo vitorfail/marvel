@@ -8,7 +8,7 @@
     padding-top: 145px;
     display: flex;
     width: 100%;
-    height: 550px;
+    height: 645px;
 }
 .venda--banner--esquerda{
     display: flex;
@@ -18,7 +18,26 @@
     width: 70%;
 }
 .venda--banner--esquerda img{
+    height: 90%;
     margin-left: 52px;
+}
+.button--comprar{
+    margin-left: 9px;
+    width: 100%;
+    border-radius: 6px;
+    border: none;
+    outline: none;
+    font-family: Roboto forte;
+    height: 44px;
+    font-size: 22px;
+    color: white;
+    background: rgb(6, 184, 44);
+}
+.button--comprar:hover{
+    cursor: pointer;
+    border: 1px solid rgb(6, 184, 44);
+    color: rgb(6, 184, 44);
+    background: white;    
 }
 .venda--banner--direita{
     padding: 45px;
@@ -36,8 +55,9 @@
     border: 3px solid rgb(168, 164, 164);
     width: 100%;
     height: 34px;
-    padding: 5px;
-    margin: 9px;
+    margin-top: 9px;
+    margin-left: 9px;
+    margin-bottom: 9px;
     font-size: 20px;
     outline: none;
     border: none;
@@ -47,10 +67,27 @@
     box-shadow: 1px 1px 4px  rgba(51, 117, 148, 0.418);
 }
 .venda--banner--botoes{
+    margin-left: 15px;
     width: 100%;
     display: flex;
     justify-content: space-between;
     align-items: center;
+}
+.venda--banner--botoes button{
+    border-radius: 6px;
+    font-weight: 800;
+    height: 45px;
+    font-size: 20px;
+    background: rgb(20, 20, 202);
+    color: white;
+    outline: none;
+    border: none;
+}
+.venda--banner--botoes button:hover{
+    cursor: pointer;
+    background: white;
+    color: rgb(20, 20, 202);
+    border: 1px solid rgb(20, 20, 202);
 }
 .venda--descri{
     margin-left: 23px;
@@ -67,11 +104,10 @@
     width: 24%;
 }
 .venda--banner--cvv{
+    justify-content: space-between;
     display: flex;
-
-    width: 100%;
+    width: 102%;
     height: 65px;
-    padding: 9px;
 }
 .venda--mapa{
     display: flex;
@@ -86,7 +122,10 @@
     width: 100%;
 }
 .venda--cep button{
+    border-radius: 6px;
     margin: 7px;
+    width: 145px;
+    height: 40px;
     font-weight: 800;
     font-size: 20px;
     background: rgb(20, 20, 202);
@@ -99,6 +138,25 @@
     background: white;
     color: rgb(20, 20, 202);
     border: 1px solid rgb(20, 20, 202);
+}
+.venda--pix{
+    transition: all ease 0.2s;
+    justify-content: center;
+    width: 350px;
+    height: 350px;
+    display: none;
+}
+.venda--pix.show{
+    display: flex;
+}
+
+.venda--cartao{
+    flex-direction: column;
+    transition: all ease 0.2s;
+    display: none;
+}
+.venda--cartao.show{
+    display: flex;
 }
 @media screen and (max-width:700px) {
     .venda--banner--esquerda {
@@ -120,5 +178,8 @@
     .venda--descri {
         text-align: center;
         margin: 0;
+    }
+    .venda--pix.show img{
+        width: 340px;
     }
 }

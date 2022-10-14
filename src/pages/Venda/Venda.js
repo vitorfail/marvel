@@ -7,18 +7,18 @@ import { StoreContext } from '../../Context';
 import axios from 'axios'
 import Mapa from '../../componentes/Mapa/Mapa';
 import { useHistory } from 'react-router-dom';
-
+import QRcode from '../../icon/qrcode.png'
 
 function Venda() {
+    const [tipo_pag, settipo_pag] = useState(true)
     const history = useHistory()
     const [localizacao, setlocalizacao] = useState({
         lat: -3.745,
         lng: -38.523
     })
     const [CEP, setCEP] = useState('')
-  const {price, setprice, listahq, setlistahq, imagemBanner, setimagemBanner, 
-    tituloBanner, settituloBanner, descricaoBanner, 
-    setdescricaoBanner, criadoresBanner, setcriadoresBanner, idBanner, setidBanner} = React.useContext(StoreContext)
+  const {price,  imagemBanner,  
+    tituloBanner, descricaoBanner , idBanner ,  setpopup} = React.useContext(StoreContext)
   useState(() =>  {
 
   })
@@ -34,6 +34,9 @@ function Venda() {
                         lat: latitude,
                         lng: longitude        
                     })
+                }
+                else{
+                    setpopup(true)
                 }
             })
         }
@@ -53,19 +56,25 @@ function Venda() {
                 <div className='venda--banner--direita'>
                     <h2>Método de pagamento:</h2>
                     <div className='venda--banner--botoes'>
-                        <button className='venda--botao'>Cartão de crédito</button>
-                        <button className='venda--botao'>Pix</button>
+                        <button onClick={() => settipo_pag(true)} className='venda--botao'>Cartão</button>
+                        <button onClick={() => settipo_pag(false)} className='venda--botao'>Pix</button>
                     </div>
-                    <input placeholder='Nome'></input>
-                    <input placeholder='Número do cartão'></input>
-                    <input placeholder='Nome'></input>
-                    <div className='venda--banner--cvv'>
-                        <input placeholder='Mês/Ano'></input>
-                        <input placeholder='CVV'></input>
+                    <div className={tipo_pag? 'venda--pix': 'venda--pix show'}>
+                        <img alt='pix' src={QRcode}></img>
                     </div>
-                    <div className='venda--cep'>
-                        <input value={CEP} onChange={(event) => setCEP(event.target.value)} placeholder='CEP'></input>
-                        <button onClick={() => localiza(localizacao)}>Pesquisar</button>
+                    <div className={tipo_pag? 'venda--cartao show': 'venda--cartao'}>
+                        <input placeholder='Nome'></input>
+                        <input placeholder='Número do cartão'></input>
+                        <input placeholder='Nome'></input>
+                        <div className='venda--banner--cvv'>
+                            <input placeholder='Mês/Ano'></input>
+                            <input placeholder='CVV'></input>
+                        </div>
+                        <div className='venda--cep'>
+                            <input value={CEP} onChange={(event) => setCEP(event.target.value)} placeholder='CEP'></input>
+                            <button onClick={() => localiza(localizacao)}>Pesquisar</button>
+                        </div>
+                        <button className='button--comprar'>COMPRAR</button>
                     </div>
                 </div>
             </div>

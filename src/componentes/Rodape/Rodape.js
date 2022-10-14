@@ -22,9 +22,15 @@ export default function Rodape(){
                 <div className="redes">
                     <h2><strong>Contatos</strong></h2>
                     <div style={{display:'flex'}}>
-                        <img alt="insta" src={Insta}></img>
-                        <img alt='tweiter' src={Twittter}></img>
-                        <img alt="face" src={Face}></img>
+                        <a  target="_blank" href="https://www.instagram.com/brisanet.oficial/">
+                            <img alt="insta" src={Insta}></img>
+                        </a>
+                        <a  target="_blank" href="https://twitter.com/brisanettelecom">
+                            <img alt='tweiter' src={Twittter}></img>
+                        </a>
+                        <a  target="_blank" href="https://pt-br.facebook.com/brisanet/">
+                            <img alt="face" src={Face}></img>
+                        </a>
                     </div>
                 </div>
             </div>

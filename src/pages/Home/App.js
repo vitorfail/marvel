@@ -46,7 +46,7 @@ function App() {
   })
   function pesquisar_comic(id_hq){
     var dados = []
-    axios.get('https://gateway.marvel.com/v1/public/comics/'+id_hq+'?limit=23&ts=1&apikey'+process.env.REACT_APP_ApiKey+'&hash='+process.env.REACT_APP_hash)
+    axios.get('https://gateway.marvel.com/v1/public/comics/'+id_hq+'?ts=1&apikey='+process.env.REACT_APP_ApiKey+'&hash='+process.env.REACT_APP_hash)
     .then(res => {
         dados = res.data.data.results[0]
         setimagemBanner(dados.thumbnail.path+'/portrait_incredible.jpg')
