@@ -15,6 +15,10 @@ code {
   font-family: Roboto regular;
   src: url('./font/Roboto-Thin.ttf');
 }
+@font-face {
+  font-family: Roboto forte;
+  src: url('./font/Roboto-Regular.ttf');
+}
 *{
   margin: 0;
   padding: 0;

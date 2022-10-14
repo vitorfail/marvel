@@ -2,8 +2,10 @@ import React,{useEffect, useState} from "react";
 import './index.css'
 import Logo from '../../icon/marvel.png'
 import Escudo from '../../icon/escudo.png'
+import { useHistory } from "react-router-dom";
 
 export default function Cabecalho(){
+    const history = useHistory()
     const [ rotation, setrotation] = useState(0)
     const [exibir, setexibir] = useState(false)
     useEffect(()=>{
@@ -29,7 +31,7 @@ export default function Cabecalho(){
     return(
         <header className={exibir? 'exibir': ''}>
             <img style={{transform:'rotate('+rotation+'deg)'}} className="escudo" src={Escudo} alt="escudo"></img>
-            <img className="logo" alt="logo" src={Logo}></img>
+            <img onClick={() => history.push('/')} className="logo" alt="logo" src={Logo}></img>
         </header>
     )
 }

@@ -41,6 +41,9 @@
   flex-direction: column;
   justify-content: space-between;
 }
+.conteudo--descri strong{
+  font-family: Roboto forte;
+}
 .conteudo--titulo{
   padding-left: 145px;
   width: 100%;
@@ -105,7 +108,8 @@
   align-items: center;
 }
 .conteudo--item--price h2{
-  color: black;
+  font-family: Roboto forte;
+  color: rgb(49, 170, 12);
 }
 .conteudo--item--price img{
   background: #00c206;

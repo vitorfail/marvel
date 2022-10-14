@@ -5,7 +5,6 @@ import ListaHq from '../../ListaHq';
 import Rodape from '../../componentes/Rodape/Rodape';
 import Sacola from '../../icon/sacola.png'
 import { StoreContext } from '../../Context';
-import ApiKey from '../../Axios'
 import axios from 'axios'
 import { useHistory } from 'react-router-dom';
 
@@ -23,7 +22,12 @@ function App() {
       var random = Math.floor(Math.random() * (lista[0].items.length - 1 + 1) + 1)
       setimagemBanner(lista[0].items[random].thumbnail.path+'/portrait_incredible.jpg')
       settituloBanner(lista[0].items[random].title)
-      setdescricaoBanner(lista[0].items[random].description)
+      if(lista[0].items[random].description === null || lista[0].items[random].description === "#N/A"){
+        setdescricaoBanner("Por questões técinicas a sinopse desta hq ainda não ficou pront, mas não se preocupae, logo resolveremos isso")
+      }
+      else{
+        setdescricaoBanner(lista[0].items[random].description)
+      }
       if(lista[0].items[random].creators !== undefined){
         setcriadoresBanner(lista[0].items[random].creators.items)
       }
@@ -37,18 +41,28 @@ function App() {
   })
   function pesquisar_comic(id_hq){
     var dados = []
-    axios.get('http://gateway.marvel.com/v1/public/comics/'+id_hq+'?'+ApiKey)
+    axios.get('http://gateway.marvel.com/v1/public/comics/'+id_hq+'?'+process.env.REACT_APP_ApiKey)
     .then(res => {
         dados = res.data.data.results[0]
         setimagemBanner(dados.thumbnail.path+'/portrait_incredible.jpg')
         settituloBanner(dados.title)
-        setdescricaoBanner(dados.description)
-        if(dados.creators.items !== undefined){
+        if(dados.description === null || dados.description === "#N/A"){
+          setdescricaoBanner("Por questões técinicas a sinopse desta hq ainda não ficou pront, mas não se preocupae, logo resolveremos isso")
+        }
+        else{
+          setdescricaoBanner(dados.description)
+        }
+
+          if(dados.creators.items !== undefined){
           setcriadoresBanner(dados.creators.items)
         }
-        if(dados.prices.price !== undefined){
-          setprice(dados.prices.price)  
+        if(dados.prices[0].price !== undefined){
+          setprice(dados.prices[0].price)  
         }
+        else{
+          setprice(0)  
+        }
+
         window.scrollTo({ top: 0, behavior: 'smooth' });
   
     })
@@ -64,7 +78,7 @@ function App() {
               <img alt='banner' src={imagemBanner}></img>
               <div className='conteudo--descri'>
                 <h1>{tituloBanner}</h1>
-                <h3 className='descri'>{descricaoBanner}</h3>
+                <h3 className='descri'><strong>Sinopse:</strong> {descricaoBanner}</h3>
                 <div className='conteudo--criadores'>
                   <h2>Criadores:</h2>
                   {criadoresBanner.map((item, index) => 

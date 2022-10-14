@@ -1,6 +1,5 @@
 import React, { useState } from "react"; 
 import { GoogleMap , useJsApiLoader, Marker} from '@react-google-maps/api';
-import { Mapkey } from "../../Axios";
 
 
 
@@ -12,7 +11,7 @@ export default function Mapa(props){
     };
       const { isLoaded } = useJsApiLoader({
         id: 'google-map-script',
-        googleMapsApiKey: Mapkey
+        googleMapsApiKey: process.env.REACT_APP_REACT_APP_REACT_APP_Mapkey
       })
     return isLoaded?(
         <GoogleMap 

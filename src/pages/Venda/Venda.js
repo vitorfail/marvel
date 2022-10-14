@@ -4,12 +4,13 @@ import React, { useState } from 'react';
 import ListaHq from '../../ListaHq';
 import Rodape from '../../componentes/Rodape/Rodape';
 import { StoreContext } from '../../Context';
-import ApiKey, { Mapkey } from '../../Axios'
 import axios from 'axios'
 import Mapa from '../../componentes/Mapa/Mapa';
+import { useHistory } from 'react-router-dom';
 
 
 function Venda() {
+    const history = useHistory()
     const [localizacao, setlocalizacao] = useState({
         lat: -3.745,
         lng: -38.523
@@ -24,7 +25,7 @@ function Venda() {
 
   function localiza(){
         if(CEP !== ''){
-            axios.get("https://maps.googleapis.com/maps/api/geocode/json?address="+CEP+"&key="+Mapkey)
+            axios.get("https://maps.googleapis.com/maps/api/geocode/json?address="+CEP+"&key="+process.env.REACT_APP_Mapkey)
             .then(res => {
                 if(res.data.results.length !== 0){
                     var latitude = res.data.results[0].geometry.location.lat
@@ -37,12 +38,17 @@ function Venda() {
             })
         }
     }
-  return (
+  return idBanner? (
     <div className="venda">
         <Cabecalho></Cabecalho>
             <div className='venda--banner'>
                 <div className='venda--banner--esquerda'>
                     <img src={imagemBanner}></img>
+                    <div className='venda--descri'>
+                        <h2>{tituloBanner}</h2>
+                        <h3>{descricaoBanner}</h3>
+                        <h2>R$ {price}</h2>
+                    </div>
                 </div>
                 <div className='venda--banner--direita'>
                     <h2>Método de pagamento:</h2>
@@ -68,7 +74,7 @@ function Venda() {
             </div>
         <Rodape></Rodape>
     </div>
-  );
+  ): history.push('/')
 }
 
 export default Venda;

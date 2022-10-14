@@ -7,9 +7,9 @@ export const Provider = (props) =>{
     const [listahq, setlistahq] = useState([])
     const [imagemBanner, setimagemBanner] = useState('')
     const [tituloBanner, settituloBanner] =useState('')
-    const [descricaoBanner, setdescricaoBanner] = useState("")
+    const [descricaoBanner, setdescricaoBanner] = useState("Por questões técinicas a sinopse desta hq ainda não ficou pront, mas não se preocupae, logo resolveremos isso")
     const [criadoresBanner, setcriadoresBanner]= useState([{name:'Desconhecido'}])
-    const [idBanner, setidBanner] = useState("")
+    const [idBanner, setidBanner] = useState(false)
 
   
     return(

@@ -4,6 +4,7 @@
     height: 100%;
 }
 .venda--banner{
+    background: white;
     padding-top: 145px;
     display: flex;
     width: 100%;
@@ -14,7 +15,10 @@
     justify-content: center;
     align-items: center;
     height: 100%;
-    width: 30%;
+    width: 70%;
+}
+.venda--banner--esquerda img{
+    margin-left: 52px;
 }
 .venda--banner--direita{
     padding: 45px;
@@ -22,9 +26,10 @@
     align-items: center;
     flex-direction: column;
     height: 100%;
-    width: 70%;
+    width: 40%;
 }
 .venda--banner--direita input{
+    background: #eee;
     padding: 9px;
     transition: all ease 0.2s;
     box-shadow: inset 2px 2px 2px 1px  rgba(173, 170, 170, 0.342);
@@ -32,7 +37,6 @@
     width: 100%;
     height: 34px;
     padding: 5px;
-    background: white;
     margin: 9px;
     font-size: 20px;
     outline: none;
@@ -47,6 +51,16 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
+}
+.venda--descri{
+    margin-left: 23px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    height: 80%;
+}
+.venda--descri h2{
+    padding-bottom: 23px;
 }
 .venda--botao{
     height: 100%;
