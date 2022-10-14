@@ -6,12 +6,12 @@ import { GoogleMap , useJsApiLoader, Marker} from '@react-google-maps/api';
 export default function Mapa(props){
  
     const containerStyle = {
-        width: '60%',
+        width: '100%',
         height: '100%'
     };
       const { isLoaded } = useJsApiLoader({
         id: 'google-map-script',
-        googleMapsApiKey: process.env.REACT_APP_REACT_APP_REACT_APP_Mapkey
+        googleMapsApiKey: process.env.REACT_APP_Mapkey
       })
     return isLoaded?(
         <GoogleMap 

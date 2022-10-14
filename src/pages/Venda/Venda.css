@@ -100,3 +100,25 @@
     color: rgb(20, 20, 202);
     border: 1px solid rgb(20, 20, 202);
 }
+@media screen and (max-width:700px) {
+    .venda--banner--esquerda {
+        width: 100%;
+        flex-direction: column;
+    }
+    .venda--banner{
+        justify-content: center;
+        height: 1153px;
+        flex-direction: column;
+    }
+    .venda--banner--direita{
+        width: 100%;
+    }
+    .venda--banner--esquerda img {
+        margin: 0;
+        
+    }
+    .venda--descri {
+        text-align: center;
+        margin: 0;
+    }
+}

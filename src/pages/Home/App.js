@@ -7,8 +7,10 @@ import Sacola from '../../icon/sacola.png'
 import { StoreContext } from '../../Context';
 import axios from 'axios'
 import { useHistory } from 'react-router-dom';
+import Loading from '../../componentes/Loading/Loading';
 
 function App() {
+  const [caregando ,setcaregando] = useState(false)
   const history = useHistory()
   const {price, setprice, listahq, setlistahq, imagemBanner, setimagemBanner, 
     tituloBanner, settituloBanner, descricaoBanner, 
@@ -20,7 +22,10 @@ function App() {
       setlistahq(lista[0].items)
 
       var random = Math.floor(Math.random() * (lista[0].items.length - 1 + 1) + 1)
-      setimagemBanner(lista[0].items[random].thumbnail.path+'/portrait_incredible.jpg')
+      if( lista[0].items[random].thumbnail !== undefined){
+        setimagemBanner(lista[0].items[random].thumbnail.path+'/portrait_incredible.jpg')
+
+      }
       settituloBanner(lista[0].items[random].title)
       if(lista[0].items[random].description === null || lista[0].items[random].description === "#N/A"){
         setdescricaoBanner("Por questões técinicas a sinopse desta hq ainda não ficou pront, mas não se preocupae, logo resolveremos isso")
@@ -35,9 +40,9 @@ function App() {
         setprice(lista[0].items[random].prices.price)  
       }
       setidBanner(lista[0].items[random].id)
+      setcaregando(true)
     }
     load()
-
   })
   function pesquisar_comic(id_hq){
     var dados = []
@@ -70,8 +75,8 @@ function App() {
       console.log(eror)
     })
   }
-  return (
-    <div className="App">
+  return caregando? (
+      <div className="App">
         <Cabecalho></Cabecalho>
         <div className='conteudo'>
             <div className='conteudo--banner'>
@@ -110,7 +115,7 @@ function App() {
         </div>
         <Rodape></Rodape>
     </div>
-  );
+  ): <Loading></Loading>
 }
 
 export default App;
