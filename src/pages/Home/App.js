@@ -103,12 +103,17 @@ function App() {
             <div className='conteudo--lista'>
               {listahq.map((item, index) => (
                  <div key={index} className='conteudo--lista--item'>
-                    <p>{item.title}</p>
-                    <img alt='thumb' src={item.thumbnail.path+'/portrait_incredible.jpg'}></img>
-                    <div className='conteudo--item--price'>
+                    <p className='titulo'>{item.title}</p>
+                    <div className='conteudo--lista--thumb'>
+                      <img alt='thumb' src={item.thumbnail.path+'/portrait_incredible.jpg'}></img>
+                    </div>
+                    <div className='conteudo--lista--descri'>
+                      <p>{item.description}</p>
+                      <div className='conteudo--item--price'>
                         <h2>R$ {item.prices[0].price}</h2>
                         <img alt='sacola' className={item.id} onClick={(event) => pesquisar_comic(event.target.className)} src={Sacola}></img>
-                    </div>                    
+                      </div>                    
+                    </div>
                 </div>
               ))}
             </div>
