@@ -1,0 +1,95 @@
+
+:root{
+    --largura:350px;
+    --altura:175px;
+}
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+.banner{
+    margin: 20px;
+    position: relative;
+    box-shadow: 1px 1px 2px rgb(0 0 0 / 5%);
+    background: #333;
+    -webkit-perspective: 500px;
+    perspective:500px;
+    width: var(--largura);
+    height: var(--altura);
+}
+.banner .imagem{
+    background-size: var(--largura) var(--altura);
+    z-index: 100;
+    width: calc(var(--largura)/5);
+    height: 100%;
+    /* z-index: 100; */
+    -webkit-transform-style: preserve-3d;
+    -moz-transform-style: preserve-3d;
+    -o-transform-style: preserve-3d;
+    -ms-transform-style: preserve-3d;
+    transform-style: preserve-3d;
+    -webkit-transform-origin: left center;
+    -moz-transform-origin: left center;
+    -o-transform-origin: left center;
+    -ms-transform-origin: left center;
+    /* transform-origin: left center; */
+    -webkit-transition: -webkit-transform 150ms ease-in-out;
+    -moz-transition: -moz-transform 150ms ease-in-out;
+    -o-transition: -o-transform 150ms ease-in-out;
+    -ms-transition: -ms-transform 150ms ease-in-out;
+    transition: transform 150ms ease-in-out;
+    -webkit-backface-visibility: hidden;
+    -moz-backface-visibility: hidden;
+    -o-backface-visibility: hidden;
+    -ms-backface-visibility: hidden;
+    backface-visibility: hidden;
+}
+.banner .imagem2{
+    background-size: cover;
+    border: 3px solid white;
+    position: absolute;
+    width: 100%;
+    height: 100%;
+}
+.imagem--hover{
+    z-index: 130;
+    position: absolute;
+    -webkit-perspective: 500px;
+    perspective:500px;
+    width: var(--largura);
+    height: var(--altura);
+}
+.imagem.s2, .imagem.s3, .imagem.s4, .imagem.s5{
+    -webkit-transform: translate3d(calc(var(--largura)/5),0,0);
+}
+.imagem.s2{
+   background-position: calc((var(--largura)/5)*-1) 0px; 
+}
+.imagem.s3{
+    background-position: calc((var(--largura)/5)*-2) 0px; 
+}
+.imagem.s4{
+    background-position: calc((var(--largura)/5)*-3) 0px; 
+}
+.imagem.s5{
+    background-position: calc((var(--largura)/5)*-4) 0px; 
+}
+
+.imagem--hover:hover> .imagem.s1 .imagem.s2{
+    cursor: w-resize;
+    box-shadow: inset -8px 8px 8px rgba(0, 0, 0, 0.466), 8px 0px 8px rgba(0, 0, 0, 0.466);
+	transform: translate3d(calc(var(--largura)/5),0,0) rotate3d(0,1,0,-40deg);
+}
+.imagem--hover:hover> .imagem.s1 .imagem.s2 .imagem.s3{
+    box-shadow: inset -8px 8px 8px rgba(0, 0, 0, 0.466) , 8px 0px 8px rgba(0, 0, 0, 0.466);
+	transform: translate3d(calc(var(--largura)/5),0,0) rotate3d(0,1,0,100deg);
+}
+.imagem--hover:hover> .imagem.s1 .imagem.s2 .imagem.s3 .imagem.s4{
+    box-shadow: inset 8px 8px 8px rgba(0, 0, 0, 0.466) , 8px 0px 8px rgba(0, 0, 0, 0.466);
+	transform: translate3d(calc(var(--largura)/5),0,0) rotate3d(0,1,0,-113deg);
+}
+.imagem--hover:hover> .imagem.s1 .imagem.s2 .imagem.s3 .imagem.s4 .imagem.s5{
+    box-shadow: inset 8px 8px 8px rgba(0, 0, 0, 0.466) , 8px 0px 8px rgba(0, 0, 0, 0.466);
+	transform: translate3d(calc(var(--largura)/5),0,0) rotate3d(0,1,0,111deg);
+}

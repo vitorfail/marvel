@@ -8,6 +8,12 @@ import { StoreContext } from '../../Context';
 import axios from 'axios'
 import { useHistory } from 'react-router-dom';
 import Loading from '../../componentes/Loading/Loading';
+import FotoAmassada from '../../componentes/FotoAmassada';
+import Foto1 from '../../icon/foto1.jpg'
+import Foto2 from '../../icon/foto2.jpg'
+import Foto3 from '../../icon/ghost2.jpg'
+import Foto4 from '../../icon/ghost.jpg'
+
 
 function App() {
   const [caregando ,setcaregando] = useState(false)
@@ -116,6 +122,28 @@ function App() {
                     </div>
                 </div>
               ))}
+            </div>
+            <div className='conteudo--curiosidade'>
+              <h2>Você sabia?</h2>
+              <h3>No inicio do "jeito marvel de ser" muitos do herois semprea presentava um desejo eminente por ciêncie, e viendo nesta onda
+                surgiram Hulk, homem aranha e homem de ferro. Mas nas palavras do Jin Morrison dalí em diante "ter superpoderes corresponderia, 
+                na melhor das hipóteses, a ter grandes responsabilidades, ou na pior, ter uma horranda maldição"
+              </h3>
+              <div className='conteudo--curiosidade--fotos'>
+                <div className='container'>
+                  <FotoAmassada fundo={Foto2} capa={Foto1}></FotoAmassada>
+                  <h2>O Gigante esmeralda</h2>
+                  <h3>Seguindo a moda da época sobrou para o pobre e franzino Dr Bruce Benner se tornar o monstro Hulk</h3>
+                </div>
+                <div className='container'>
+                  <FotoAmassada fundo={Foto3} capa={Foto4}></FotoAmassada>
+                  <h2>Serviçaldo inferno</h2>
+                  <h3>Já para o dublê jonny Blaze sobrou se tornar capacho do próprio diabo. Mas depois de certo 
+                    tempo por questões religiosas mudaram o nome do seu algoz que passou a ser Mephisto, um dos donos de algumas
+                    repartições do inferno
+                  </h3>
+                </div>
+              </div>
             </div>
         </div>
         <Rodape></Rodape>

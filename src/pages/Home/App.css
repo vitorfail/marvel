@@ -180,12 +180,41 @@
   height: 20%;
 }
 .conteudo--criadores h2{
-  font-size: 17px;
+  font-size: 50px;
   font-weight: 900;
 }
 .conteudo--criadores h3{
-  height: 17px;
+  width: 47%;
+  height: 107px;
   font-size: 17px;
+}
+.conteudo--curiosidade{
+  color: white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  width: 100%;
+  height: 950px;
+  background: rgb(0, 0, 0);
+}
+.conteudo--curiosidade--fotos{
+  width: 100%;
+  height: 70%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.conteudo--curiosidade--fotos .container{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  width: 450px;
+  height: 745px;
+}
+.conteudo--curiosidade--fotos .container h3{
+  width: 100%;
 }
 @media screen and (max-width: 700px){
   .conteudo--banner{
@@ -211,5 +240,8 @@
     margin-bottom: 19px;
     max-height: 240px;
     overflow-y: auto;
+  }
+  .conteudo--curiosidade--fotos{
+    flex-direction: column;
   }
 }

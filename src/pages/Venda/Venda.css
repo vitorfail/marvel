@@ -182,4 +182,7 @@
     .venda--pix.show img{
         width: 340px;
     }
+    .venda--banner{
+        padding-top: 245px;
+    }    
 }
