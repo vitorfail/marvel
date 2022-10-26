@@ -124,24 +124,25 @@ function App() {
               ))}
             </div>
             <div className='conteudo--curiosidade'>
-              <h2>Você sabia?</h2>
-              <h3>No inicio do "jeito marvel de ser" muitos do herois semprea presentava um desejo eminente por ciêncie, e viendo nesta onda
+              <h2 className='voce-sabia'>Você sabia?</h2>
+              <h3 className='descri'>No inicio do "jeito marvel de ser" muitos do herois semprea presentava um desejo eminente por ciêncie, e viendo nesta onda
                 surgiram Hulk, homem aranha e homem de ferro. Mas nas palavras do Jin Morrison dalí em diante "ter superpoderes corresponderia, 
                 na melhor das hipóteses, a ter grandes responsabilidades, ou na pior, ter uma horranda maldição"
               </h3>
               <div className='conteudo--curiosidade--fotos'>
                 <div className='container'>
                   <FotoAmassada fundo={Foto2} capa={Foto1}></FotoAmassada>
-                  <h2>O Gigante esmeralda</h2>
-                  <h3>Seguindo a moda da época sobrou para o pobre e franzino Dr Bruce Benner se tornar o monstro Hulk</h3>
+                  <h2 style={{color:"#23c323" , width:"80%"}}>O Gigante esmeralda</h2>
+                  <p>Seguindo a moda da época sobrou para o pobre e franzino Dr Bruce Benner se tornar o monstro Hulk. 
+                    O médico ou monstro, sem interrogação, assim com apresentado em sua estreia frase sem interrogação nós faz enteder a mistura de sua identidade</p>
                 </div>
                 <div className='container'>
                   <FotoAmassada fundo={Foto3} capa={Foto4}></FotoAmassada>
-                  <h2>Serviçaldo inferno</h2>
-                  <h3>Já para o dublê jonny Blaze sobrou se tornar capacho do próprio diabo. Mas depois de certo 
+                  <h2 style={{color:"#ff0000", width:"80%"}}>Serviçal do inferno</h2>
+                  <p>Já para o dublê jonny Blaze sobrou se tornar capacho do próprio diabo. Mas depois de certo 
                     tempo por questões religiosas mudaram o nome do seu algoz que passou a ser Mephisto, um dos donos de algumas
                     repartições do inferno
-                  </h3>
+                  </p>
                 </div>
               </div>
             </div>

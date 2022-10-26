@@ -196,7 +196,15 @@
   flex-direction: column;
   width: 100%;
   height: 950px;
-  background: rgb(0, 0, 0);
+  background: linear-gradient(to bottom right, rgb(0, 0, 0), rgb(28, 17, 56)) ;
+}
+.conteudo--curiosidade .descri{
+  text-align: center;
+  width: 70%;
+}
+.conteudo--curiosidade .voce-sabia{
+  height: 112px;
+  font-size: 70px;
 }
 .conteudo--curiosidade--fotos{
   width: 100%;
@@ -207,14 +215,14 @@
 }
 .conteudo--curiosidade--fotos .container{
   display: flex;
-  justify-content: center;
   align-items: center;
   flex-direction: column;
   width: 450px;
-  height: 745px;
+  height: 524px;
 }
-.conteudo--curiosidade--fotos .container h3{
-  width: 100%;
+.conteudo--curiosidade--fotos .container p{
+  font-size: 17px;
+  width: 80%;
 }
 @media screen and (max-width: 700px){
   .conteudo--banner{
@@ -243,5 +251,20 @@
   }
   .conteudo--curiosidade--fotos{
     flex-direction: column;
+  }
+  .conteudo--curiosidade--fotos .container{
+    height: 1245px;
+  }
+  .conteudo--curiosidade--fotos .container {
+    width: 100%;
+  }
+  .conteudo--curiosidade .voce-sabia {
+    height: 95px;
+    font-size: 50px;
+  }
+  .conteudo--curiosidade .descri {
+    text-align: justify;
+    width: 80%;
+    margin-bottom: 30px;
   }
 }
