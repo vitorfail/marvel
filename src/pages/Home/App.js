@@ -13,6 +13,10 @@ import Foto1 from '../../icon/foto1.jpg'
 import Foto2 from '../../icon/foto2.jpg'
 import Foto3 from '../../icon/ghost2.jpg'
 import Foto4 from '../../icon/ghost.jpg'
+import Foto5 from '../../icon/matt2.jpg'
+import Foto6 from '../../icon/matt.jpg'
+import Foto7 from '../../icon/dr2.jpg'
+import Foto8 from '../../icon/dr.jpeg'
 
 
 function App() {
@@ -125,7 +129,7 @@ function App() {
             </div>
             <div className='conteudo--curiosidade'>
               <h2 className='voce-sabia'>Você sabia?</h2>
-              <h3 className='descri'>No inicio do "jeito marvel de ser" muitos do herois semprea presentava um desejo eminente por ciêncie, e viendo nesta onda
+              <h3 className='descri'>No inicio do "jeito marvel de ser" muitos do heróis costumavam apresentar um desejo eminente por ciência, e vindo nesta onda
                 surgiram Hulk, homem aranha e homem de ferro. Mas nas palavras do Jin Morrison dalí em diante "ter superpoderes corresponderia, 
                 na melhor das hipóteses, a ter grandes responsabilidades, ou na pior, ter uma horranda maldição"
               </h3>
@@ -143,6 +147,20 @@ function App() {
                     tempo por questões religiosas mudaram o nome do seu algoz que passou a ser Mephisto, um dos donos de algumas
                     repartições do inferno
                   </p>
+                </div>
+                <div className='container'>
+                  	<FotoAmassada fundo={Foto5} capa={Foto6}></FotoAmassada>
+                  	<h2 style={{color:"#f1f120", width:"80%"}}>Homem sem medo</h2>
+                  	<p>Já o pobre Matt Murdock além de nascer em origem pobre e perder os pais, em troca de seus super sentidos 
+					o mesmo ainda teve que perder sua visão. 
+                  	</p>
+                </div>
+			 <div className='container'>
+                  	<FotoAmassada fundo={Foto7} capa={Foto8}></FotoAmassada>
+                  	<h2 style={{color:"#2f2fed", width:"80%"}}>Mestre das artes místicas</h2>
+                  	<p>Para o arrogante Dr. Estranho sobrou perder o movimento cirúrgico de suas mãos para que na ruida
+					de sua vida profissional ele pudesse dispertar o talento inato das artes místicas  
+                  	</p>
                 </div>
               </div>
             </div>
