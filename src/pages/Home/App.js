@@ -17,18 +17,11 @@ import Foto5 from '../../icon/matt2.jpg'
 import Foto6 from '../../icon/matt.jpg'
 import Foto7 from '../../icon/dr2.jpg'
 import Foto8 from '../../icon/dr.jpeg'
-import Banner from '../../icon/iron-man.jpeg'
-import Banner2 from '../../icon/cap.jpg'
-import Banner3 from '../../icon/doctor.jpg'
-import Banner4 from '../../icon/x-men.jpg'
-import Banner5 from '../../icon/avengers.jpg'
+import Banner from '../../componentes/Banner';
+
 
 function App() {
-  const [slides, setslides] = useState([]); // this selection is a live collection; any changes in DOM is updated in the variable unlike querySelectors
-  const [currentSlideIndex, setcurrentSlideIndex] = useState(0);
-  const [lastSlideIndex, setlastSlideIndex] = useState(0);
-
-
+  
   const [caregando ,setcaregando] = useState(false)
   const history = useHistory()
   const {price, setprice, listahq, setlistahq, imagemBanner, setimagemBanner, 
@@ -146,15 +139,7 @@ function App() {
   return caregando? (
       <div className="App">
         <Cabecalho></Cabecalho>
-        <div className='slider'>
-          <div className='esquerdo' onClick={() => esquerda()}>&lt;</div>
-          <div className='direito' onClick={() => direita()}>&gt;</div>
-          <div id='slide1' style={{backgroundImage:'url('+Banner+')', backgroundRepeat:'no-repeat', backgroundPosition:'center', backgroundSize:'100%, 100%'}} className='slide'>1</div>
-          <div id='slide' style={{backgroundImage:'url('+Banner2+')', backgroundRepeat:'no-repeat', backgroundPosition:'center', backgroundSize:'100%, 100%'}} className='slide'>3</div>
-          <div id='slide' style={{backgroundImage:'url('+Banner3+')', backgroundRepeat:'no-repeat', backgroundPosition:'center', backgroundSize:'100%, 100%'}} className='slide'>4</div>
-          <div id='slide' style={{backgroundImage:'url('+Banner4+')', backgroundRepeat:'no-repeat', backgroundPosition:'center', backgroundSize:'100%, 100%'}} className='slide'>5</div>
-          <div id='slide' style={{backgroundImage:'url('+Banner5+')', backgroundRepeat:'no-repeat', backgroundPosition:'center', backgroundSize:'100%, 100%'}} className='slide'>6</div>
-        </div>
+        <Banner imagens={[Foto1, Foto2, Foto3, Foto4, Foto5, Foto6, Foto7]}></Banner>
         <div className='conteudo'>
             <div className='conteudo--banner'>
               <img alt='banner' src={imagemBanner}></img>
