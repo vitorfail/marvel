@@ -14,10 +14,11 @@ export default function Banner(props){
         }
         else{
             var indi = indice+1
+            ref.current[ref.current.length-2].style.transform = 'translateX(-'+(indi*100)+'%)'
+            ref.current[ref.current.length-1].style.transform = 'translateX(-'+(indi*100)+'%)'
             for(var i = 0;i< ref.current.length; i++){
-                ref.current[i].style.transform = 'translateX('+((indi)*100)+'%)'
-                if(i === ref.current.length-1){
-                    ref.current[i].style.transform = 'translateX(-'+(indi*100)+'%)'
+                if(i !== ref.current[ref.current.length-2] || i !== ref.current[ref.current.length-1]){
+                    ref.current[i].style.transform = 'translateX('+((indi)*100)+'%)'
                 }
             }
             setindice(indi)

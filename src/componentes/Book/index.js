@@ -4,12 +4,12 @@ import React from 'react'
 export default function Book(props){
     return(
         <div className='book'>
-            <p className='book--titulo'>{props.dados.title}</p>
+            <p className='titulo'>{props.titulo}</p>
             <div className='book--thumb'>
-                <img alt='thumb' src={props.dados.thumbnail.path+'/portrait_incredible.jpg'}></img>
+                <img alt='thumb' src={props.link}></img>
             </div>
             <div className='book--descri'>
-                <p>{props.dados.description}</p>
+                <p>{props.descricao}</p>
             </div>
         </div>
 

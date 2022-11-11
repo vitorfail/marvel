@@ -97,7 +97,6 @@ function App() {
 	return caregando? (
 			<div className="App">
 				<Cabecalho></Cabecalho>
-				<Banner imagens={[Foto1, Foto2, iron, Foto4, Cap, Foto6, Doctor]}></Banner>
 				<div className='conteudo'>
 						<div className='conteudo--banner'>
 							<img alt='banner' src={imagemBanner}></img>
@@ -122,8 +121,8 @@ function App() {
 						</div>
 						<div className='conteudo--lista'>
 							{listahq.map((item, index) => (
-								<div>
-									<Book key={index} dados={item}></Book>
+								<div className='conteudo--book'>
+									<Book key={index} descricao={item.description} titulo={item.title} link={item.thumbnail.path+'/portrait_incredible.jpg'} ></Book>
 									<div className='conteudo--item--price'>
 										<h2>R$ {item.prices[0].price}</h2>
 										<img alt='sacola' className={item.id} onClick={(event) => pesquisar_comic(event.target.className)} src={Sacola}></img>
