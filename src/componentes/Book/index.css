@@ -78,6 +78,7 @@
   width: 100%;
 }
 .book--descri p{
+  padding: 11px;
   font-weight: bold;
   margin-top: 34px;
   max-height: 89%;
