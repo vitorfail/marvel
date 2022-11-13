@@ -1,6 +1,11 @@
 import './index.css'
 import React from 'react'
 
+/**
+ * @constructor
+ * @param {string} capa
+ * @param {string} fundo 
+ */
 export default function FotoAmassada(props){
     return(
         <div className="banner">

@@ -1,6 +1,12 @@
 import './index.css'
 import React from 'react'
 
+/**
+ * @constructor
+ * @param {string} titulo
+ * @param {string} link 
+ * @param {string} descricao
+ */
 export default function Book(props){
     return(
         <div className='book'>
