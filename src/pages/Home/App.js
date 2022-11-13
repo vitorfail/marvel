@@ -23,10 +23,12 @@ import Cap from '../../icon/cap.jpg'
 
 import Banner from '../../componentes/Banner';
 import Book from '../../componentes/Book';
+import { CuboGiratorio } from '../../componentes/CuboGiratorio';
 
 
 function App() {
-	
+	const links = ["https://m.media-amazon.com/images/I/8173Yg0SmPL.jpg", "https://upload.wikimedia.org/wikipedia/en/4/47/Iron_Man_%28circa_2018%29.png"
+	, "https://sm.ign.com/ign_br/screenshot/default/doutor-estranho_pqtw.jpg", "https://t.ctcdn.com.br/t4K7q3Yv1YFueIpiTL-q78bmv5o=/1400x788/smart/i622806.jpeg"]
 	const [caregando ,setcaregando] = useState(false)
 	const history = useHistory()
 	const {price, setprice, listahq, setlistahq, imagemBanner, setimagemBanner, 
@@ -172,6 +174,9 @@ function App() {
 								</div>
 							</div>
 						</div>
+				</div>
+				<div className='filmes'>
+					<CuboGiratorio imagens={links}></CuboGiratorio>
 				</div>
 				<Rodape></Rodape>
 		</div>
