@@ -177,6 +177,7 @@ function App() {
 				</div>
 				<div className='filmes'>
 					<CuboGiratorio imagens={links}></CuboGiratorio>
+					<div className='filmes--sombra'></div>
 				</div>
 				<Rodape></Rodape>
 		</div>
