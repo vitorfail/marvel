@@ -194,15 +194,34 @@
   justify-content: center;
   align-items: center;
   display: flex;
-  background: #eee;
+  background: linear-gradient(to bottom right, rgb(0, 0, 0),  rgb(44, 14, 14)) ;
+}
+.filmes h2{
+  text-align: center;
+  font-size: 53px;
+  color: #eee;
+  margin-bottom: 139px;
 }
 .filmes--sombra{
   transform: rotateX(75deg);
-  background: rgba(0, 0, 0, 0);
+  background: rgba(211, 5, 5, 0.5);
   border-radius: 50%;
-  width: 20%;
-  height: 15%;
-  box-shadow: 0px 0px 145px rgb(0, 0, 0);
+  width: 30%;
+  height: 20%;
+  margin-top: 100px;
+  transition: all ease 0.2s;
+  animation: sombra 2s linear infinite;
+}
+@keyframes sombra {
+  0%{
+    box-shadow: 4px 4px 245px  rgb(245, 7, 7);
+  }
+  50%{
+    box-shadow: 0px 0px 115px rgba(245, 7, 7, 0.712);
+  }
+  100%{
+    box-shadow: 4px 4px 245px rgb(245, 7, 7);
+  }
 }
 @media screen and (max-width: 700px){
   .conteudo--banner{
@@ -250,5 +269,9 @@
   }
   .conteudo--curiosidade{
     height: 2042px;
+  }
+  .filmes--sombra{
+    width: 60%;
+    height: 20%;
   }
 }

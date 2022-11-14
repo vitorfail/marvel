@@ -27,8 +27,10 @@ import { CuboGiratorio } from '../../componentes/CuboGiratorio';
 
 
 function App() {
-	const links = ["https://m.media-amazon.com/images/I/8173Yg0SmPL.jpg", "https://upload.wikimedia.org/wikipedia/en/4/47/Iron_Man_%28circa_2018%29.png"
-	, "https://sm.ign.com/ign_br/screenshot/default/doutor-estranho_pqtw.jpg", "https://t.ctcdn.com.br/t4K7q3Yv1YFueIpiTL-q78bmv5o=/1400x788/smart/i622806.jpeg"]
+	const links = ["https://s2.glbimg.com/n3WM9f6PAk5vmhgKXD9R9lI0nsg=/0x0:1400x1016/924x0/smart/filters:strip_icc()/i.s3.glbimg.com/v1/AUTH_b0f0e84207c948ab8b8777be5a6a4395/internal_photos/bs/2022/V/V/1Av89fSlK7pp1P9IDuqw/pantera-negra-wakanda-forever.png",
+	 "https://osrabiscosdageadas.com/wp-content/uploads/2022/09/p_thorloveandthunder_639_593cb642.jpeg"
+	, "https://br.web.img3.acsta.net/c_310_420/pictures/22/10/25/09/01/1618750.jpg", 
+	"https://br.web.img3.acsta.net/pictures/22/02/14/18/29/1382589.png"]
 	const [caregando ,setcaregando] = useState(false)
 	const history = useHistory()
 	const {price, setprice, listahq, setlistahq, imagemBanner, setimagemBanner, 
@@ -176,6 +178,7 @@ function App() {
 						</div>
 				</div>
 				<div className='filmes'>
+					<h2>Filmes em cartaz</h2>
 					<CuboGiratorio imagens={links}></CuboGiratorio>
 					<div className='filmes--sombra'></div>
 				</div>
