@@ -181,6 +181,9 @@ function App() {
 					<h2>Filmes em cartaz</h2>
 					<CuboGiratorio imagens={links}></CuboGiratorio>
 					<div className='filmes--sombra'></div>
+					<p>Os filmes de super-herois levam multidões paras salas fazendo com que se mantenha viva a 
+						cultura do cinema, mesmo em meio aos gigantes serviços de streaming. E esse filmes por sua vez são baseadoemobras e quadrinhos dos mais variados tipos. 
+						E só aqui você encontra diversos deles. No fim o que você vê na tela teve início em uma folha de papelem branco</p>
 				</div>
 				<Rodape></Rodape>
 		</div>
