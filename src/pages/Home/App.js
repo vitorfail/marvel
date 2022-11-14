@@ -141,10 +141,10 @@ function App() {
 						</div>
 						<div className='conteudo--curiosidade'>
 							<h2 className='voce-sabia'>Você sabia?</h2>
-							<h3 className='descri'>No inicio do "jeito marvel de ser" muitos do heróis costumavam apresentar um desejo eminente por ciência, e vindo nesta onda
+							<p className='descri'>No inicio do "jeito marvel de ser" muitos do heróis costumavam apresentar um desejo eminente por ciência, e vindo nesta onda
 								surgiram Hulk, homem aranha e homem de ferro. Mas nas palavras do Jin Morrison dalí em diante "ter superpoderes corresponderia, 
 								na melhor das hipóteses, a ter grandes responsabilidades, ou na pior, ter uma horranda maldição"
-							</h3>
+							</p>
 							<div className='conteudo--curiosidade--fotos'>
 								<div className='container'>
 									<FotoAmassada fundo={Foto2} capa={Foto1}></FotoAmassada>
@@ -178,12 +178,13 @@ function App() {
 						</div>
 				</div>
 				<div className='filmes'>
-					<h2>Filmes em cartaz</h2>
+					<h2>Filmes baseados em HQ</h2>
+					<p>Os filmes de super-herois levam multidões para as salas fazendo com que se mantenha viva a 
+						cultura do cinema, mesmo em meio aos gigantes serviços de streaming. E esses filmes por sua vez são baseado em obras e quadrinhos dos mais variados tipos. 
+						E só aqui você encontra diversos deles. No fim o que você vê na tela teve início em uma folha de papelem branco</p>
+
 					<CuboGiratorio imagens={links}></CuboGiratorio>
 					<div className='filmes--sombra'></div>
-					<p>Os filmes de super-herois levam multidões paras salas fazendo com que se mantenha viva a 
-						cultura do cinema, mesmo em meio aos gigantes serviços de streaming. E esse filmes por sua vez são baseadoemobras e quadrinhos dos mais variados tipos. 
-						E só aqui você encontra diversos deles. No fim o que você vê na tela teve início em uma folha de papelem branco</p>
 				</div>
 				<Rodape></Rodape>
 		</div>
