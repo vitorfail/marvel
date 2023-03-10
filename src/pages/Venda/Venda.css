@@ -1,0 +1,188 @@
+.venda{
+    background: #eee;
+    width: 100%;
+    height: 100%;
+}
+.venda--banner{
+    background: white;
+    padding-top: 145px;
+    display: flex;
+    width: 100%;
+    height: 645px;
+}
+.venda--banner--esquerda{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+    width: 70%;
+}
+.venda--banner--esquerda img{
+    height: 90%;
+    margin-left: 52px;
+}
+.button--comprar{
+    margin-left: 9px;
+    width: 100%;
+    border-radius: 6px;
+    border: none;
+    outline: none;
+    font-family: Roboto forte;
+    height: 44px;
+    font-size: 22px;
+    color: white;
+    background: rgb(6, 184, 44);
+}
+.button--comprar:hover{
+    cursor: pointer;
+    border: 1px solid rgb(6, 184, 44);
+    color: rgb(6, 184, 44);
+    background: white;    
+}
+.venda--banner--direita{
+    padding: 45px;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    height: 100%;
+    width: 40%;
+}
+.venda--banner--direita input{
+    background: #eee;
+    padding: 9px;
+    transition: all ease 0.2s;
+    box-shadow: inset 2px 2px 2px 1px  rgba(173, 170, 170, 0.342);
+    border: 3px solid rgb(168, 164, 164);
+    width: 100%;
+    height: 34px;
+    margin-top: 9px;
+    margin-left: 9px;
+    margin-bottom: 9px;
+    font-size: 20px;
+    outline: none;
+    border: none;
+}
+.venda--banner--direita input:focus{
+    transition: all ease 0.2s;
+    box-shadow: 1px 1px 4px  rgba(51, 117, 148, 0.418);
+}
+.venda--banner--botoes{
+    margin-left: 15px;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.venda--banner--botoes button{
+    border-radius: 6px;
+    font-weight: 800;
+    height: 45px;
+    font-size: 20px;
+    background: rgb(20, 20, 202);
+    color: white;
+    outline: none;
+    border: none;
+}
+.venda--banner--botoes button:hover{
+    cursor: pointer;
+    background: white;
+    color: rgb(20, 20, 202);
+    border: 1px solid rgb(20, 20, 202);
+}
+.venda--descri{
+    margin-left: 23px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    height: 80%;
+}
+.venda--descri h2{
+    padding-bottom: 23px;
+}
+.venda--botao{
+    height: 100%;
+    width: 24%;
+}
+.venda--banner--cvv{
+    justify-content: space-between;
+    display: flex;
+    width: 102%;
+    height: 65px;
+}
+.venda--mapa{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 450px;
+}
+.venda--cep{
+    display: flex;
+    height: 50px;
+    width: 100%;
+}
+.venda--cep button{
+    border-radius: 6px;
+    margin: 7px;
+    width: 145px;
+    height: 40px;
+    font-weight: 800;
+    font-size: 20px;
+    background: rgb(20, 20, 202);
+    color: white;
+    outline: none;
+    border: none;
+}
+.venda--cep button:hover{
+    cursor: pointer;
+    background: white;
+    color: rgb(20, 20, 202);
+    border: 1px solid rgb(20, 20, 202);
+}
+.venda--pix{
+    transition: all ease 0.2s;
+    justify-content: center;
+    width: 350px;
+    height: 350px;
+    display: none;
+}
+.venda--pix.show{
+    display: flex;
+}
+
+.venda--cartao{
+    flex-direction: column;
+    transition: all ease 0.2s;
+    display: none;
+}
+.venda--cartao.show{
+    display: flex;
+}
+@media screen and (max-width:700px) {
+    .venda--banner--esquerda {
+        width: 100%;
+        flex-direction: column;
+    }
+    .venda--banner{
+        justify-content: center;
+        height: 1153px;
+        flex-direction: column;
+    }
+    .venda--banner--direita{
+        width: 100%;
+    }
+    .venda--banner--esquerda img {
+        margin: 0;
+        
+    }
+    .venda--descri {
+        text-align: center;
+        margin: 0;
+    }
+    .venda--pix.show img{
+        width: 340px;
+    }
+    .venda--banner{
+        padding-top: 245px;
+    }    
+}

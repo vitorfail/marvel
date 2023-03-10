@@ -1,0 +1,28 @@
+header{
+    transition: all ease 0.2s;
+    box-shadow: 4px 4px 12px rgba(0, 0, 0, 0.486);
+    z-index: 99;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 75px;
+    width: 100%;
+    position: fixed;
+    background: rgb(237 28 36);
+    color: white;
+}
+header.exibir{
+    background: black;
+}
+header .logo{
+    height: 70%;
+    width: 150px;
+}
+header .logo:hover{
+    cursor: pointer;
+}
+header .escudo{
+    margin-right: 23px;
+    width: 55px;
+    height: 55px;
+}

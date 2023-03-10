@@ -1,0 +1,30 @@
+html::-webkit-scrollbar{
+  background: white;
+  width: 10px;
+}
+html::-webkit-scrollbar-corner{
+  display: none;
+}
+html::-webkit-scrollbar-thumb{
+  border-radius: 12px;
+  background: rgba(43, 43, 43, 0.253);
+  height: 223px;
+}
+@font-face {
+  font-family: Roboto regular;
+  src: url('./font/Roboto-Thin.ttf');
+}
+@font-face {
+  font-family: Roboto forte;
+  src: url('./font/Roboto-Regular.ttf');
+}
+@font-face {
+  font-family: Roboto S-forte;
+  src: url('./font/Roboto-Bold.ttf');
+}
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: Roboto regular;
+}

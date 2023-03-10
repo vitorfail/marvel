@@ -1,0 +1,300 @@
+.App {
+  background-color: #eee;
+  width: 100%;
+  height: 100%;
+}
+.conteudo{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.conteudo--banner{
+  background: white;
+  box-shadow: 3px 3px 8px rgba(0, 0, 0, 0.514);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 85%;
+  height: 649px;
+  margin-top: 125px;
+  margin-bottom: 45px;
+}
+.conteudo--banner img{
+  box-shadow: 4px 2px 18px rgba(0, 0, 0, 0.521);
+  margin: 13px;
+  width: 280px;
+  height: 69%;
+}
+.conteudo--price{
+  padding-left: 12px;
+  padding-right: 12px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.conteudo--price img{
+  border-radius: 23px;
+  background: #00c206;
+  height: 65px;
+  width: 65px;
+}
+.conteudo--price img:hover{
+  cursor: pointer;
+  background: #84ff88;
+}
+.conteudo--descri{
+  width: 55%;
+  height: 69%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+.conteudo--descri strong{
+  font-family: Roboto forte;
+}
+.conteudo--titulo{
+  padding-left: 145px;
+  width: 100%;
+  height: 56px;
+}
+
+.conteudo--lista{
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+.conteudo--book{
+  background: white;
+  align-items: center;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  width: 240px;
+  margin: 24px;
+  box-shadow: 1px 1px 16px rgb(0,0,0, 0.51);
+}
+.conteudo--item--price{
+  height: 8%;
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  padding-left: 23px;
+  padding-right: 23px;
+  align-items: center;
+}
+.conteudo--item--price h2{
+  font-family: Roboto forte;
+  color: rgb(49, 170, 12);
+}
+.conteudo--item--price img{
+  background: #00c206;
+  height: 80%;
+  width: 17%;
+  border-radius: 6px;
+}
+.conteudo--item--price img:hover{
+  cursor: pointer;
+  background: #84ff88;
+}
+.conteudo--criadores{
+  align-items: center;
+  justify-content: flex-start;
+  display: flex;
+  flex-wrap: wrap;
+  width: 100%;
+  min-height: 20%;
+}
+.conteudo--criadores h2{
+  font-size: 30px;
+  font-weight: 900;
+}
+.conteudo--criadores h3{
+  min-width: auto;
+  font-size: 17px;
+}
+.conteudo--curiosidade{
+  color: white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  width: 100%;
+  height: 1157px;
+  background: linear-gradient(to bottom right, rgb(0, 0, 0), rgb(28, 17, 56)) ;
+}
+.conteudo--curiosidade .descri{
+  font-size: 20px;
+  margin-bottom: 82px;
+  text-align: center;
+  width: 70%;
+}
+.conteudo--curiosidade .voce-sabia{
+  height: 112px;
+  font-size: 70px;
+}
+.conteudo--curiosidade--fotos{
+  width: 100%;
+  height: 70%;
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  align-items: center;
+}
+.conteudo--curiosidade--fotos .container{
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  width: 450px;
+  height: 349px;
+}
+.conteudo--curiosidade--fotos .container p{
+  font-size: 17px;
+  width: 80%;
+}
+.slider{
+  position: relative;
+  overflow-x: hidden;
+  width: 100%;
+  height: 90vh;
+  background: #00c206;
+}
+.slider .slide{
+  background: #84ff88;
+  position: absolute;
+  height: 100%;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transition: 1s;
+}
+
+.slider .esquerdo, .slider .direito{
+  font-size: 90px;
+  text-align: center;
+  width: 100px;
+  height: 100px;
+  position: absolute;
+  z-index: 89;
+  color: white;
+  border-radius: 50%;
+  border: 2px solid white;
+  margin-top: 240px;
+}
+.slider .esquerdo{
+  left: 0;
+}
+.slider .direito{
+  right: 0;
+}
+.filmes{
+  flex-direction: column;
+  width: 100%;
+  height: 800px;
+  justify-content: center;
+  align-items: center;
+  display: flex;
+  background: linear-gradient(to bottom right, rgb(0, 0, 0),  rgb(44, 14, 14)) ;
+}
+.filmes h2{
+  text-align: center;
+  font-size: 53px;
+  color: #eee;
+  margin-bottom: 89px;
+  margin-top: 80px;
+}
+.filmes--sombra{
+  transform: rotateX(75deg);
+  background: rgba(211, 5, 5, 0.5);
+  border-radius: 50%;
+  width: 30%;
+  height: 24%;
+  margin-top: 100px;
+  transition: all ease 0.2s;
+  animation: sombra 2s linear infinite;
+  margin-top: 80px;
+}
+.filmes p{
+  text-align: justify;
+  font-size: 20px;
+  color: white;
+  width: 70%;
+  margin-bottom: 53px;
+}
+.compras{
+  width: 100%;
+  height: 600px;
+  background-image: linear-gradient(-55deg, rgba(50,45,55,1) 0%, rgba(101,96,106,1) 100%);
+  justify-content: center;
+  display: flex;
+  flex-wrap: wrap;
+  padding-top: 50px;
+  padding-bottom: 50px;
+}
+@keyframes sombra {
+  0%{
+    box-shadow: 4px 4px 245px  rgb(245, 7, 7);
+  }
+  50%{
+    box-shadow: 0px 0px 115px rgba(245, 7, 7, 0.712);
+  }
+  100%{
+    box-shadow: 4px 4px 245px rgb(245, 7, 7);
+  }
+}
+@media screen and (max-width: 700px){
+  .conteudo--banner{
+    flex-direction: column;
+  }
+  .conteudo--descri{
+    text-align: center;
+    width: 80%;
+    justify-content: center;
+  }
+  .conteudo--titulo {
+    margin-top: 23px;
+    padding: 0;
+  }
+  .conteudo--titulo h2{
+    text-align: center;
+  }
+  .conteudo--banner {
+    height: 1200px;
+  }
+  .conteudo--descri .descri{
+    margin-top: 19px;
+    margin-bottom: 19px;
+    max-height: 240px;
+    overflow-y: auto;
+  }
+  .conteudo--curiosidade--fotos{
+    flex-wrap: nowrap;
+    flex-direction: column;
+  }
+  .conteudo--curiosidade--fotos .container{
+    height: 1245px;
+  }
+  .conteudo--curiosidade--fotos .container {
+    width: 100%;
+  }
+  .conteudo--curiosidade .voce-sabia {
+    height: 95px;
+    font-size: 50px;
+  }
+  .conteudo--curiosidade .descri {
+    text-align: justify;
+    width: 80%;
+    margin-bottom: 30px;
+  }
+  .conteudo--curiosidade{
+    height: 2042px;
+  }
+  .filmes{
+    height: 1156px;
+  }
+  .filmes--sombra{
+    width: 60%;
+    height: 20%;
+  }
+}
