@@ -188,9 +188,9 @@ function App() {
 					<div className='filmes--sombra'></div>
 				</div>
 				<div className='compras'>
-					<BannerCompra></BannerCompra>
-					<BannerCompra></BannerCompra>
-					<BannerCompra></BannerCompra>
+					<BannerCompra cor={"rgba(27,31,144,1)"}></BannerCompra>
+					<BannerCompra cor={"rgba(145,141,144,1)"}></BannerCompra>
+					<BannerCompra cor={"rgba(145,141,144,1)"}></BannerCompra>
 				</div>
 				<Rodape></Rodape>
 		</div>

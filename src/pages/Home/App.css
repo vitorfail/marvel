@@ -225,7 +225,7 @@
 .compras{
   width: 100%;
   height: 600px;
-  background-image: linear-gradient(-55deg, rgba(50,45,55,1) 0%, rgba(101,96,106,1) 100%);
+  background-image: linear-gradient(-55deg, rgb(17, 17, 17) 0%, rgb(48, 48, 48) 100%);
   justify-content: center;
   display: flex;
   flex-wrap: wrap;

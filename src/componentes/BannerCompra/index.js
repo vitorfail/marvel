@@ -1,16 +1,16 @@
 import React from "react";
 import './index.css'
 
-export default function BannerCompra(){
+export default function BannerCompra(props){
     return(
         <div class="banner-compra">
             <div class="cart">
-                <div class="front">
+                <div class="front" style={{backgroundImage:"linear-gradient(180deg, "+props.cor+" 0%, rgba(92,91,94,0) 100%)"}}>
                     <h2>Signature</h2>
                     <p>7.7 deck<span>2018</span></p>
                     <p class="price">$ 89.00</p>
                     </div>
-                <div class="right">
+                <div class="right" style={{backgroundImage:"linear-gradient(0deg, "+props.cor+" 0%, rgba(92,91,94,0) 100%)"}}>
                     <h2>Signature</h2>
                     <ul>
                     <li>Width	7.7"</li>
