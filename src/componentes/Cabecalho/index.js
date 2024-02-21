@@ -8,7 +8,6 @@ export default function Cabecalho(){
     const history = useHistory()
     const [ rotation, setrotation] = useState(0)
     const [exibir, setexibir] = useState(false)
-    const [altura, setaltura] = useState(window.scrollY)
     useEffect(()=>{
         //checa a rolagem do usuário e modifica a posição do escudo
         const checarScroll = () =>{

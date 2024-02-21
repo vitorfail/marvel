@@ -4,10 +4,9 @@ async function puxar_dados(){
     var dados = []
     await axios.get('https://gateway.marvel.com/v1/public/comics?limit=23&ts=1&apikey='+process.env.REACT_APP_ApiKey+'&hash='+process.env.REACT_APP_hash)
     .then(res => {
+        console.log(res.data.data.results)
         for(var i =0; i < res.data.data.results.length; i++){
-            if(res.data.data.results[i].description !== ""){
-                dados.push(res.data.data.results[i])
-            }
+            dados.push(res.data.data.results[i])
         }
     })
     return dados

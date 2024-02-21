@@ -1,42 +1,47 @@
-import React from "react";
 import './Rodape.css'
-import Insta from './inta.png'
-import Twittter from './twitter.png'
-import Face from './facebook.png'
+import Facebook from './facebook.png'
+import Instagram from './instagram.png'
+import Linkedim from './linkedin.png'
 
 export default function Rodape(){
     return(
-        <footer>
-            <div className="rodape">
-                <div className="contatos">
-                    <h2><strong>Canais de atendimento</strong></h2>
-                    <h4>(88) 98134-8978</h4>
-                    <h4>emailteste@hotmail.com</h4>
+        <div className="rodape">
+            <div className='info'>
+                <div className='coluna'>
+                    <h3>Links principais</h3>
+                    <h4>Home</h4>
+                    <h4>Ferramentas</h4>
+                    <h4>Preços</h4>
+                    <h4>Contato</h4>
                 </div>
-                <div className="endereço">
-                    <h2><strong>Endereço</strong></h2>
-                    <h4>Rua Alberta</h4>
-                    <h4>Barbalha, ceará</h4>
-                    <h4>Sala 205</h4>
+                <div className='coluna'>
+                    <h3>Materias</h3>
+                    <h4>Blog</h4>
+                    <h4>Parceria com Agências</h4>
+                    <h4>Gia definitivo de Marketing</h4>
+                    <h4>Materiais gratuitos</h4>
                 </div>
-                <div className="redes">
-                    <h2><strong>Contatos</strong></h2>
-                    <div style={{display:'flex'}}>
-                        <a  target="_blank" href="https://www.instagram.com/brisanet.oficial/">
-                            <img alt="insta" src={Insta}></img>
-                        </a>
-                        <a  target="_blank" href="https://twitter.com/brisanettelecom">
-                            <img alt='tweiter' src={Twittter}></img>
-                        </a>
-                        <a  target="_blank" href="https://pt-br.facebook.com/brisanet/">
-                            <img alt="face" src={Face}></img>
-                        </a>
+                <div className='coluna'>
+                    <h3>Siga-me</h3>
+                    <div className='icons'>
+                        <div className='backs'>
+                            <img alt='Linkedim' src={Linkedim}></img>
+                        </div>
+                        <div className='backs'>
+                            <img alt='Facebook' src={Facebook}></img>
+                        </div>
+                        <div className='backs'>
+                            <img alt='intagram' src={Instagram}></img>
+                        </div>
                     </div>
+                    <h4><strong>Email:</strong>vitor_andrademanoel@hotmail.com</h4>
+                    <h4><strong>Telefone:</strong>(88) 981393182</h4>
                 </div>
             </div>
-            <div className="bottom">
-                <h3>@2019 Copyright - Vitor Manoel</h3>
+            <div className='copy'>
+                <label>Copyright ©2024 Todos os direitos autorais reservados | </label>
+                <label>Juazerio do norte CE - CEP: 63180-000 | Termos de uso </label>
             </div>
-        </footer>
+        </div>
     )
 }

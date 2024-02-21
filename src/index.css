@@ -11,20 +11,38 @@ html::-webkit-scrollbar-thumb{
   height: 223px;
 }
 @font-face {
-  font-family: Roboto regular;
-  src: url('./font/Roboto-Thin.ttf');
+  font-family: Ealing;
+  src: url("./font/Ealing.otf");
 }
 @font-face {
-  font-family: Roboto forte;
-  src: url('./font/Roboto-Regular.ttf');
+  font-family: Roboto;
+  font-weight: 100;
+  src: url('./font/Avenir\ Light.ttf');
 }
 @font-face {
-  font-family: Roboto S-forte;
-  src: url('./font/Roboto-Bold.ttf');
+  font-family: Recoleta;
+  font-weight: 100;
+  src: url('./font/Recoleta-Bold.ttf');
+}
+@font-face {
+  font-family: Roboto;
+  font-weight: 200;
+  src: url('./font/Avenir\ Regular.ttf');
+}
+@font-face {
+  font-family: Roboto;
+  font-weight: 300;
+  src: url('./font/Avenir\ Black.ttf');
+}
+@font-face {
+  font-family: Roboto;
+  font-weight: 400;
+  src: url('./font/Avenir\ Heavy.ttf');
 }
 *{
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-  font-family: Roboto regular;
+  font-weight: 300;
+  font-family: Roboto;
 }

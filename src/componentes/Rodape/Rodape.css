@@ -1,75 +1,109 @@
-footer{
+.rodape{
+    padding: 34px 0px;
+    justify-content: center;
+    align-items: center;
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    min-height: 300px;
+    background: rgb(0, 0, 0);
+}
+.rodape .info{
+    width: 71%;
+    margin-top: 32px;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: space-between;
+    display: flex;
+    min-height: 89%;
+}
+.rodape .logo{
+    width: 190px;
+    height: auto;
+}
+.rodape label{
+    margin-top: 3px;
+    font-size: 11px;
+}
+.rodape .info .coluna{
+    margin-top: 53px;
+    height: 200px;
+    width: 210px;
     display: flex;
     flex-direction: column;
     justify-content: space-between;
-    bottom: 0;
-    width: 100%;
-    min-height: 200px;
-    background: rgb(46, 46, 46);
-    color: beige;
+    align-items: start;
 }
-footer .rodape{
-    margin-top: 34px;
+.rodape .info .coluna .icons{
+    width: 140px;
+    justify-content: space-evenly;
     display: flex;
-    justify-content: space-around;
-    width: 100%;
 }
-footer .rodape h2{
-    margin-top: 3px;
-    margin-bottom: 13px;
-}
-footer .contatos{
-    padding: 8px;
-    display: block;
-}
-footer .contatos{
-    display: block;
-}
-footer .endereço{
-    display: block;
-}
-footer .redes{
-    display: flex;
-    flex-direction: column;
+.rodape .info .coluna .icons .backs{
     justify-content: center;
+    display: flex;
     align-items: center;
+    border-radius: 50%;
+    background: #f0f8ff;
+    width: 33px;
+    height: 33px;
 }
-footer .redes img{
-    margin: 8px;
-    width: 34px;
+.rodape .info .coluna .icons .backs img{
+    width: 16px;
+    height: auto;
 }
-footer .bottom{
-    bottom: 0;
+
+.rodape .info .coluna h3{
+    color: white;
+    font-weight: 700;
+    padding-bottom: 23px;
+    font-size: 16px;
+}
+.rodape .info .coluna h4{
+    color: white;
+    transition: all 0.2s;
+    font-weight: 300;
+    font-size: 13px;
+    height: 30px;
+    align-items: center;
+    text-align: center;
+    justify-items: center;
+    display: flex;
+}
+.rodape .info .coluna h4:hover{
+    cursor: pointer;
+    border-bottom: 1px solid #0084ff;
+    margin-bottom: -1px;
+    color: #0084ff;
+}
+.rodape .copy{
+    color: white;
+    border-top: 1.5px solid #f0f8ff;
+    margin-top: 74px;
+    width: 100%;
+    padding-top: 23px;
     display: flex;
     justify-content: center;
-    align-items: center;
-    width: 100%;
-    height: 34px;
-    background: rgb(14, 13, 13);
 }
-footer .bottom h3{
-    font-family: Roboto fina;
-    font-size: 14px;
+.rodape .copy label{
+    padding: 0px 34px;
+    font-size: 12px;
 }
-@media screen and (max-width:900px){
-    footer .rodape {
-        flex-direction: column;
-    }
-    footer .contatos{
+@media screen and (max-width:780px){
+    .rodape .info .coluna {
+        margin-top: 53px;
+        height: 200px;
+        width: 300px;
         display: flex;
         flex-direction: column;
+        justify-content: space-between;
+        align-items: center;
+    }
+    .rodape .info {
         justify-content: center;
     }
-    footer .contatos h2, footer .contatos h4{
+    .rodape label {
         text-align: center;
     }
-    footer .endereco{
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
-    }
-    footer .rodape h2, footer .rodape h4{
-        text-align: center;
-    }
-     
 }
+

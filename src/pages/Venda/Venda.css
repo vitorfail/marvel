@@ -27,7 +27,8 @@
     border-radius: 6px;
     border: none;
     outline: none;
-    font-family: Roboto forte;
+    font-family: Roboto;
+    font-weight: 400;
     height: 44px;
     font-size: 22px;
     color: white;

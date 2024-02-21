@@ -1,6 +1,6 @@
 import './App.css';
 import Cabecalho from '../../componentes/Cabecalho';
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import ListaHq from '../../ListaHq';
 import Rodape from '../../componentes/Rodape/Rodape';
 import Sacola from '../../icon/sacola.png'
@@ -17,11 +17,10 @@ import Foto5 from '../../icon/matt2.jpg'
 import Foto6 from '../../icon/matt.jpg'
 import Foto7 from '../../icon/dr2.jpg'
 import Foto8 from '../../icon/dr.jpeg'
-import iron from '../../icon/iron-man.jpeg'
-import Doctor from '../../icon/doctor.jpg'
-import Cap from '../../icon/cap.jpg'
 
-import Banner from '../../componentes/Banner';
+import lampada from "./lampada.png"
+import corda from "./chain.png"
+
 import Book from '../../componentes/Book';
 import { CuboGiratorio } from '../../componentes/CuboGiratorio';
 import BannerCompra from '../../componentes/BannerCompra';
@@ -34,6 +33,9 @@ function App() {
 	"https://br.web.img3.acsta.net/pictures/22/02/14/18/29/1382589.png"]
 	const [caregando ,setcaregando] = useState(false)
 	const history = useHistory()
+	const [ativo, setativo] = useState(false)
+	const [ rotation, setrotation] = useState(0)
+
 	const {price, setprice, listahq, setlistahq, imagemBanner, setimagemBanner, 
 		tituloBanner, settituloBanner, descricaoBanner, 
 		setdescricaoBanner, criadoresBanner, setcriadoresBanner, idBanner, setidBanner} = React.useContext(StoreContext)
@@ -41,6 +43,7 @@ function App() {
 		// o load serve para definir a hq que vai ficar no banner principal, escolhendo uma aleatoriamente
 		const load = async () =>{
 			var lista = await ListaHq.homelist()
+
 			setlistahq(lista[0].items)
 
 			var random = Math.floor(Math.random() * (lista[0].items.length - 1 + 1) + 1)
@@ -66,6 +69,35 @@ function App() {
 		}
 		load()
 	})
+    useEffect(() => {
+        window.addEventListener('scroll', function() {
+            var d = document.getElementsByClassName("conteudo--curiosidade")
+            if(d[0] !== null){
+                for(let i =0; i< d.length; i++){
+                    var position = d[i].getBoundingClientRect();
+                    if(position.top+55 < window.innerHeight && position.bottom >= 0){
+                        if(ativo !==true){
+                            setativo(true)
+						}    
+                    }
+                }
+            }
+        });
+		const checarScroll = () =>{
+			setrotation(rotation+2)
+		  }
+		  //checa se o usuário desceu para mudar a cor do header
+		  const scrollevent = () =>{
+			if (ativo && rotation< 45){
+				checarScroll()
+			}
+
+		  }
+		window.addEventListener("scroll", scrollevent,)
+        return () => {
+          window.removeEventListener("scroll", scrollevent)
+        }
+    })
 	function pesquisar_comic(id_hq){
 		var dados = []
 		axios.get('https://gateway.marvel.com/v1/public/comics/'+id_hq+'?ts=1&apikey='+process.env.REACT_APP_ApiKey+'&hash='+process.env.REACT_APP_hash)
@@ -126,13 +158,14 @@ function App() {
 						</div>
 						<div className='conteudo--lista'>
 							{listahq.map((item, index) => (
-								<div className='conteudo--book'>
+								<div key={index} className='conteudo--book'>
 									<Book 
 										key={index} 
 										descricao={item.description} 
 										titulo={item.title} 
 										link={item.thumbnail.path+'/portrait_incredible.jpg'}>	
 									</Book>
+									<p>{item.title}</p>
 									<div className='conteudo--item--price'>
 										<h2>R$ {item.prices[0].price}</h2>
 										<img alt='sacola' className={item.id} onClick={(event) => pesquisar_comic(event.target.className)} src={Sacola}></img>
@@ -141,6 +174,11 @@ function App() {
 							))}
 						</div>
 						<div className='conteudo--curiosidade'>
+							<div className='lampada'>
+								<img alt='lampada' src={lampada}></img>
+								<img style={{transform:"translateY("+rotation+"px) rotateZ(90deg)"}} alt='corda' src={corda}></img>
+								<div style={{boxShadow:"0px 0px "+(rotation*2)+"px "+(rotation*2.1)+"px rgb(255, 255, 255)"}} className='luz'></div>
+							</div>
 							<h2 className='voce-sabia'>Você sabia?</h2>
 							<p className='descri'>No inicio do "jeito marvel de ser" muitos do heróis costumavam apresentar um desejo eminente por ciência, e vindo nesta onda
 								surgiram Hulk, homem aranha e homem de ferro. Mas nas palavras do Jin Morrison dalí em diante "ter superpoderes corresponderia, 
@@ -149,13 +187,13 @@ function App() {
 							<div className='conteudo--curiosidade--fotos'>
 								<div className='container'>
 									<FotoAmassada fundo={Foto2} capa={Foto1}></FotoAmassada>
-									<h2 style={{color:"#23c323" , width:"80%"}}>O Gigante esmeralda</h2>
+									<h2 >O Gigante esmeralda</h2>
 									<p>Seguindo a moda da época sobrou para o pobre e franzino Dr Bruce Benner se tornar o monstro Hulk. 
 										O médico ou monstro, sem interrogação, assim com apresentado em sua estreia frase sem interrogação nós faz enteder a mistura de sua identidade</p>
 								</div>
 								<div className='container'>
 									<FotoAmassada fundo={Foto3} capa={Foto4}></FotoAmassada>
-									<h2 style={{color:"#ff0000", width:"80%"}}>Serviçal do inferno</h2>
+									<h2 >Serviçal do inferno</h2>
 									<p>Já para o dublê jonny Blaze sobrou se tornar capacho do próprio diabo. Mas depois de certo 
 										tempo por questões religiosas mudaram o nome do seu algoz que passou a ser Mephisto, um dos donos de algumas
 										repartições do inferno
@@ -163,14 +201,14 @@ function App() {
 								</div>
 								<div className='container'>
 										<FotoAmassada fundo={Foto5} capa={Foto6}></FotoAmassada>
-										<h2 style={{color:"#f1f120", width:"80%"}}>Homem sem medo</h2>
+										<h2 >Homem sem medo</h2>
 										<p>Já o pobre Matt Murdock além de nascer em origem pobre e perder os pais, em troca de seus super sentidos 
 					o mesmo ainda teve que perder sua visão. 
 										</p>
 								</div>
 			 <div className='container'>
 										<FotoAmassada fundo={Foto7} capa={Foto8}></FotoAmassada>
-										<h2 style={{color:"#2f2fed", width:"80%"}}>Mestre das artes místicas</h2>
+										<h2 >Mestre das artes místicas</h2>
 										<p>Para o arrogante Dr. Estranho sobrou perder o movimento cirúrgico de suas mãos para que na ruida
 					de sua vida profissional ele pudesse dispertar o talento inato das artes místicas  
 										</p>

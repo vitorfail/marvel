@@ -51,7 +51,8 @@
   justify-content: space-between;
 }
 .conteudo--descri strong{
-  font-family: Roboto forte;
+  font-family: Roboto;
+  font-weight: 400;
 }
 .conteudo--titulo{
   padding-left: 145px;
@@ -65,14 +66,16 @@
   flex-wrap: wrap;
 }
 .conteudo--book{
-  background: white;
   align-items: center;
   display: flex;
   justify-content: center;
   flex-direction: column;
   width: 240px;
   margin: 24px;
-  box-shadow: 1px 1px 16px rgb(0,0,0, 0.51);
+}
+.conteudo--book p{
+  width: 90%;
+  text-align: center;
 }
 .conteudo--item--price{
   height: 8%;
@@ -84,7 +87,8 @@
   align-items: center;
 }
 .conteudo--item--price h2{
-  font-family: Roboto forte;
+  font-family: Roboto;
+  font-weight: 400;
   color: rgb(49, 170, 12);
 }
 .conteudo--item--price img{
@@ -114,43 +118,71 @@
   font-size: 17px;
 }
 .conteudo--curiosidade{
-  color: white;
+  background: url("./ideia.jpg");
+  background-size: auto;
+  background-position: inherit;  
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  position: relative;
+  overflow-y: hidden;
+  color: black;
   display: flex;
   align-items: center;
   justify-content: center;
   flex-direction: column;
   width: 100%;
-  height: 1157px;
-  background: linear-gradient(to bottom right, rgb(0, 0, 0), rgb(28, 17, 56)) ;
+  height: 1457px;
 }
 .conteudo--curiosidade .descri{
+  font-family: Roboto;
+  font-weight: 200;
   font-size: 20px;
   margin-bottom: 82px;
   text-align: center;
   width: 70%;
 }
 .conteudo--curiosidade .voce-sabia{
+  margin-top: 200px;
+  font-weight: 400;
+  font-family: Recoleta;
   height: 112px;
   font-size: 70px;
 }
 .conteudo--curiosidade--fotos{
-  width: 100%;
+  width: 80%;
   height: 70%;
   display: flex;
-  justify-content: center;
+  justify-content: space-evenly;
   flex-wrap: wrap;
   align-items: center;
 }
 .conteudo--curiosidade--fotos .container{
+  margin: 10px;
   display: flex;
-  align-items: center;
+  align-items: flex-start;
   flex-direction: column;
-  width: 450px;
-  height: 349px;
+  width: 352px;
+  height: 389px;
 }
 .conteudo--curiosidade--fotos .container p{
+  font-weight: 200;
   font-size: 17px;
-  width: 80%;
+  width: 100%;
+}
+.conteudo--curiosidade--fotos .container h2{
+  font-family: Recoleta;
+}
+.conteudo--curiosidade--fotos .container:nth-of-type(1) h2{
+  color: #004402;
+}
+.conteudo--curiosidade--fotos .container:nth-of-type(2) h2{
+  color: #750000;
+}
+.conteudo--curiosidade--fotos .container:nth-of-type(3) h2{
+  color: #686600;
+}
+.conteudo--curiosidade--fotos .container:nth-of-type(4) h2{
+  color: #001f58;
 }
 .slider{
   position: relative;
@@ -231,6 +263,38 @@
   flex-wrap: wrap;
   padding-top: 50px;
   padding-bottom: 50px;
+}
+.lampada{
+  top: -15px;
+  right: 0;
+  width: 10%;
+  height: 30%;
+  position: absolute;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+.lampada img:nth-child(1){
+  width: 50%;
+  height: 30%;
+}
+.lampada img:nth-child(2){
+  transform:  rotateZ(90deg);
+  position: relative;
+  top: -52px;
+  transition: all 0.2s ease-in-out;
+  background-size: cover;
+  width: 130%;
+  height: 10%;
+}
+.lampada .luz{
+  top: 130px;
+  background: white;
+  z-index: 2;
+  position: absolute;
+  width: 20px;
+  height: 10px;
 }
 @keyframes sombra {
   0%{

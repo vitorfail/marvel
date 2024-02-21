@@ -9,7 +9,6 @@
     box-sizing: border-box;
 }
 .banner{
-    margin: 20px;
     position: relative;
     box-shadow: 1px 1px 2px rgb(0 0 0 / 5%);
     background: #333;
@@ -17,6 +16,7 @@
     perspective:500px;
     width: var(--largura);
     height: var(--altura);
+    box-shadow: 1px 0px 10px rgba(0, 0, 0, 0.384);
 }
 .banner .imagem{
     background-size: var(--largura) var(--altura);
