@@ -10,21 +10,46 @@
   align-items: center;
 }
 .conteudo--banner{
-  background: white;
   box-shadow: 3px 3px 8px rgba(0, 0, 0, 0.514);
   display: flex;
   justify-content: center;
   align-items: center;
-  width: 85%;
-  height: 649px;
-  margin-top: 125px;
+  width: 100%;
+  height: 20%;
   margin-bottom: 45px;
+}
+.conteudo--banner .titulo{
+  right: 10px;
+  top: 100px;
+  z-index: 3;
+  color: white;
+  position: absolute;
+  font-size: 70px;
+  font-family: Recoleta;
+}
+.conteudo--banner .descri{
+  text-align: justify;
+  width: 250px;
+  right: 50px;
+  top: 200px;
+  z-index: 3;
+  color: white;
+  position: absolute;
+  font-size: 20px;
+  font-weight: 100; 
+}
+.conteudo--banner::after{
+  content: "";
+  position: absolute;
+  z-index: 2;
+  width: 100%;
+  height: 150%;
+  box-shadow: inset 0px 30px 295px 79px black;
 }
 .conteudo--banner img{
   box-shadow: 4px 2px 18px rgba(0, 0, 0, 0.521);
-  margin: 13px;
-  width: 280px;
-  height: 69%;
+  width: 100%;
+  height: 100%;
 }
 .conteudo--price{
   padding-left: 12px;
@@ -132,6 +157,10 @@
   flex-direction: column;
   width: 100%;
   height: 1457px;
+}
+.conteudo--curiosidade h3{
+  padding-bottom: 15px;
+  font-weight: 300;
 }
 .conteudo--curiosidade .descri{
   font-family: Roboto;
@@ -324,7 +353,23 @@
     text-align: center;
   }
   .conteudo--banner {
-    height: 1200px;
+    height: 524px;
+}
+.conteudo--banner .titulo {
+  width: 189px;
+  font-size: 35px;
+}
+.conteudo--banner .descri {
+  font-size: 15px;
+  width: 150px;
+}
+.conteudo--banner img {
+  width: 160%;
+  margin-left: -249px;
+}
+  .conteudo--banner::after {
+    box-shadow: inset -130px 0px 174px 74px black;    
+    height: 80%;
   }
   .conteudo--descri .descri{
     margin-top: 19px;
@@ -336,26 +381,43 @@
     flex-wrap: nowrap;
     flex-direction: column;
   }
-  .conteudo--curiosidade--fotos .container{
-    height: 1245px;
-  }
+
   .conteudo--curiosidade--fotos .container {
+    height: auto;
+    margin-top:-60px;
     width: 100%;
   }
   .conteudo--curiosidade .voce-sabia {
+    margin-top: 6px;
     height: 95px;
-    font-size: 50px;
+    font-size: 35px;
+  }
+  .lampada img:nth-child(1){
+    height: 13%;
+  }
+  .lampada img:nth-child(2){
+    height: 6%;
+  }
+  .lampada{
+    right: -30px;
+    top: -131px;
+    height: 30%;
+    width: 30%;
   }
   .conteudo--curiosidade .descri {
+    font-size: 15px;
     text-align: justify;
-    width: 80%;
+    width: 75%;
     margin-bottom: 30px;
   }
   .conteudo--curiosidade{
-    height: 2042px;
+    height: 2242px;
   }
   .filmes{
     height: 1156px;
+  }
+  .lampada .luz {
+    top: 243px;
   }
   .filmes--sombra{
     width: 60%;

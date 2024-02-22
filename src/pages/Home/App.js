@@ -24,7 +24,7 @@ import corda from "./chain.png"
 import Book from '../../componentes/Book';
 import { CuboGiratorio } from '../../componentes/CuboGiratorio';
 import BannerCompra from '../../componentes/BannerCompra';
-
+import tony from "./tony.jpeg"
 
 function App() {
 	const links = ["https://s2.glbimg.com/n3WM9f6PAk5vmhgKXD9R9lI0nsg=/0x0:1400x1016/924x0/smart/filters:strip_icc()/i.s3.glbimg.com/v1/AUTH_b0f0e84207c948ab8b8777be5a6a4395/internal_photos/bs/2022/V/V/1Av89fSlK7pp1P9IDuqw/pantera-negra-wakanda-forever.png",
@@ -136,22 +136,11 @@ function App() {
 				<Cabecalho></Cabecalho>
 				<div className='conteudo'>
 						<div className='conteudo--banner'>
-							<img alt='banner' src={imagemBanner}></img>
-							<div className='conteudo--descri'>
-								<h1>{tituloBanner}</h1>
-								<h3 className='descri'><strong>Sinopse:</strong> {descricaoBanner}</h3>
-								<div className='conteudo--criadores'>
-									<h2>Criadores:</h2>
-									{criadoresBanner.map((item, index) => 
-									(<h3 key={index}>
-										{item.name},
-									</h3>))}
-								</div>
-								<div className='conteudo--price'>
-									<h1>R$ {price.toFixed(2)}</h1>
-									<img onClick={() => history.push('/venda')} alt='sacola' src={Sacola}></img>
-								</div>
-							</div>
+							<img alt='banner' src={tony} ></img>
+							<p className='titulo'>Heróis entre nós</p>
+							<p className='descri'>Uma das curiosidade mais interessantes sobre as criação da Marvel é o fato
+								que a maioria dos heróis não tem identidade secreta. O homem de ferro por exemplo não fez questão de esconder do mundo que ele ela o homem de ferro
+							</p>
 						</div>
 						<div className='conteudo--titulo'>
 							<h1>Quadrinhos em destaque:</h1>
@@ -180,6 +169,7 @@ function App() {
 								<div style={{boxShadow:"0px 0px "+(rotation*2)+"px "+(rotation*2.1)+"px rgb(255, 255, 255)"}} className='luz'></div>
 							</div>
 							<h2 className='voce-sabia'>Você sabia?</h2>
+							<h3>A casa das idéias e seus vício criativos</h3>
 							<p className='descri'>No inicio do "jeito marvel de ser" muitos do heróis costumavam apresentar um desejo eminente por ciência, e vindo nesta onda
 								surgiram Hulk, homem aranha e homem de ferro. Mas nas palavras do Jin Morrison dalí em diante "ter superpoderes corresponderia, 
 								na melhor das hipóteses, a ter grandes responsabilidades, ou na pior, ter uma horranda maldição"

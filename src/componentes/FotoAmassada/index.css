@@ -93,3 +93,9 @@
     box-shadow: inset 8px 8px 8px rgba(0, 0, 0, 0.466) , 8px 0px 8px rgba(0, 0, 0, 0.466);
 	transform: translate3d(calc(var(--largura)/5),0,0) rotate3d(0,1,0,111deg);
 }
+@media screen and  (max-width:650px) {
+    :root{
+        --largura:290px;
+        --altura:175px;
+    }
+}

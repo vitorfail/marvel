@@ -1,6 +1,5 @@
 header{
     transition: all ease 0.2s;
-    box-shadow: 4px 4px 12px rgba(0, 0, 0, 0.486);
     z-index: 99;
     display: flex;
     justify-content: center;
@@ -8,7 +7,7 @@ header{
     height: 75px;
     width: 100%;
     position: fixed;
-    background: rgb(237 28 36);
+    background: rgba(237, 28, 35, 0);
     color: white;
 }
 header.exibir{
