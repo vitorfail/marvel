@@ -33,6 +33,7 @@ import disney from "./disney.png"
 import hydra from "./hydra.png"
 import anel from "./anel.png"
 import thor from "./thor.jpg"
+import cap from "./cap.jpg"
 
 
 function App() {
@@ -163,11 +164,13 @@ function App() {
 							<i onClick={() =>nextSlide()} >&gt;</i>
 							<div className='carrosel' style={{left:margin+"%"}}>
 								<div className='conteudo--banner'>
-									<img alt='banner' src={tony} ></img>
+									<img alt='banner' src={cap} ></img>
 									<p className='titulo'>Uma luz na excuridão</p>
-									<p className='descri'>Uma das curiosidade mais interessantes sobre as criação da Marvel é o fato
-									que a maioria dos heróis não tem identidade secreta. O homem de ferro por exemplo não fez questão de esconder do mundo que ele ela o homem de ferro
-									</p>
+									<p className='descri'>Em 1941 a Criação de Jack Kirby fazia sua
+									estreia extravagante. O infame personagem aparecia ,na capa da sua 
+									primeira revista, socando o próprio Hitler. Naquele contexto o super soldado não representava apenas 
+									o desejo dos aliados de vencer a guerra, mas também os pais maridos e filhos que saim de casa 
+									para preencher as trincheiras na guerra contra o os alemães</p>
 								</div>					
 								<div className='conteudo--banner'>
 									<img alt='banner' src={tony} ></img>
