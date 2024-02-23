@@ -24,7 +24,16 @@ import corda from "./chain.png"
 import Book from '../../componentes/Book';
 import { CuboGiratorio } from '../../componentes/CuboGiratorio';
 import BannerCompra from '../../componentes/BannerCompra';
-import tony from "./tony.jpeg"
+import tony from "./tony.jpg"
+import Logos from '../../componentes/Logos';
+import marvel from "./marvel.png"
+import avenger from "./avenger.png"
+import selo from "./selo.png"
+import disney from "./disney.png"
+import hydra from "./hydra.png"
+import anel from "./anel.png"
+import thor from "./thor.jpg"
+
 
 function App() {
 	const links = ["https://s2.glbimg.com/n3WM9f6PAk5vmhgKXD9R9lI0nsg=/0x0:1400x1016/924x0/smart/filters:strip_icc()/i.s3.glbimg.com/v1/AUTH_b0f0e84207c948ab8b8777be5a6a4395/internal_photos/bs/2022/V/V/1Av89fSlK7pp1P9IDuqw/pantera-negra-wakanda-forever.png",
@@ -35,7 +44,47 @@ function App() {
 	const history = useHistory()
 	const [ativo, setativo] = useState(false)
 	const [ rotation, setrotation] = useState(0)
-
+	const [ margin, setmargin] =useState(0)
+	const [currentIndex, setCurrentIndex] = useState(0);
+	const [items, setItems] = useState([
+		<div key={0} className='conteudo--banner'>
+			<img alt='banner' src={tony} ></img>
+			<p className='titulo'>Heróis entre nós</p>
+			<p className='descri'>Uma das curiosidade mais interessantes sobre as criação da Marvel é o fato
+			que a maioria dos heróis não tem identidade secreta. O homem de ferro por exemplo não fez questão de esconder do mundo que ele ela o homem de ferro
+			</p>
+		</div>,								
+		<div key={1} className='conteudo--banner'>
+			<img alt='banner' src={tony} ></img>
+			<p className='titulo'>Heróis entre nós</p>
+			<p className='descri'>Uma das curiosidade mais interessantes sobre as criação da Marvel é o fato
+			que a maioria dos heróis não tem identidade secreta. O homem de ferro por exemplo não fez questão de esconder do mundo que ele ela o homem de ferro
+			</p>
+		</div>,
+		<div key={2} className='conteudo--banner'>
+			<img alt='banner' src={thor} ></img>
+			<p className='titulo'>Deuses</p>
+			<p className='descri'>Uma das curiosidade mais interessantes sobre as criação da Marvel é o fato
+				que a maioria dos heróis não tem identidade secreta. O homem de ferro por exemplo não fez questão de esconder do mundo que ele ela o homem de ferro
+			</p>
+		</div>])
+	  const prevSlide = () => {
+		console.log( (margin+100)/100+"  "+items.length)
+		
+			setTimeout(() =>{
+				setmargin(margin+100)
+				const lastItem = items.pop(); // Remove o último elemento
+				items.unshift(lastItem); // Adiciona o último elemento ao início
+				setItems([...items]); 
+				}, 200)	
+	  };
+	
+	  const nextSlide = () => {
+		setmargin(margin-100)
+		setTimeout(() =>{
+		}, 200)
+	  };
+	
 	const {price, setprice, listahq, setlistahq, imagemBanner, setimagemBanner, 
 		tituloBanner, settituloBanner, descricaoBanner, 
 		setdescricaoBanner, criadoresBanner, setcriadoresBanner, idBanner, setidBanner} = React.useContext(StoreContext)
@@ -135,13 +184,14 @@ function App() {
 			<div className="App">
 				<Cabecalho></Cabecalho>
 				<div className='conteudo'>
-						<div className='conteudo--banner'>
-							<img alt='banner' src={tony} ></img>
-							<p className='titulo'>Heróis entre nós</p>
-							<p className='descri'>Uma das curiosidade mais interessantes sobre as criação da Marvel é o fato
-								que a maioria dos heróis não tem identidade secreta. O homem de ferro por exemplo não fez questão de esconder do mundo que ele ela o homem de ferro
-							</p>
+						<div className='conteudo--carrosel'>
+							<i onClick={() =>prevSlide()} >&lt;</i>
+							<i onClick={() =>nextSlide()} >&gt;</i>
+							<div className='carrosel' style={{left:margin+"%"}}>
+								{items}
+							</div>
 						</div>
+						<Logos logos={[marvel, avenger, selo, disney, anel, hydra]} ></Logos>
 						<div className='conteudo--titulo'>
 							<h1>Quadrinhos em destaque:</h1>
 						</div>
