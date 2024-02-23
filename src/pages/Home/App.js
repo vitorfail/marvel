@@ -46,44 +46,18 @@ function App() {
 	const [ rotation, setrotation] = useState(0)
 	const [ margin, setmargin] =useState(0)
 	const [currentIndex, setCurrentIndex] = useState(0);
-	const [items, setItems] = useState([
-		<div key={0} className='conteudo--banner'>
-			<img alt='banner' src={tony} ></img>
-			<p className='titulo'>Heróis entre nós</p>
-			<p className='descri'>Uma das curiosidade mais interessantes sobre as criação da Marvel é o fato
-			que a maioria dos heróis não tem identidade secreta. O homem de ferro por exemplo não fez questão de esconder do mundo que ele ela o homem de ferro
-			</p>
-		</div>,								
-		<div key={1} className='conteudo--banner'>
-			<img alt='banner' src={tony} ></img>
-			<p className='titulo'>Heróis entre nós</p>
-			<p className='descri'>Uma das curiosidade mais interessantes sobre as criação da Marvel é o fato
-			que a maioria dos heróis não tem identidade secreta. O homem de ferro por exemplo não fez questão de esconder do mundo que ele ela o homem de ferro
-			</p>
-		</div>,
-		<div key={2} className='conteudo--banner'>
-			<img alt='banner' src={thor} ></img>
-			<p className='titulo'>Deuses</p>
-			<p className='descri'>Uma das curiosidade mais interessantes sobre as criação da Marvel é o fato
-				que a maioria dos heróis não tem identidade secreta. O homem de ferro por exemplo não fez questão de esconder do mundo que ele ela o homem de ferro
-			</p>
-		</div>])
-	  const prevSlide = () => {
-		console.log( (margin+100)/100+"  "+items.length)
-		
-			setTimeout(() =>{
-				setmargin(margin+100)
-				const lastItem = items.pop(); // Remove o último elemento
-				items.unshift(lastItem); // Adiciona o último elemento ao início
-				setItems([...items]); 
-				}, 200)	
-	  };
-	
+	function prevSlide(){
+		if(margin<100){
+			setmargin(margin+100)
+		}
+	}
 	  const nextSlide = () => {
-		setmargin(margin-100)
-		setTimeout(() =>{
-		}, 200)
-	  };
+		if(margin== -100){
+		}
+		else{
+			setmargin(margin-100)
+		}
+	  }
 	
 	const {price, setprice, listahq, setlistahq, imagemBanner, setimagemBanner, 
 		tituloBanner, settituloBanner, descricaoBanner, 
@@ -188,7 +162,28 @@ function App() {
 							<i onClick={() =>prevSlide()} >&lt;</i>
 							<i onClick={() =>nextSlide()} >&gt;</i>
 							<div className='carrosel' style={{left:margin+"%"}}>
-								{items}
+								<div className='conteudo--banner'>
+									<img alt='banner' src={tony} ></img>
+									<p className='titulo'>Uma luz na excuridão</p>
+									<p className='descri'>Uma das curiosidade mais interessantes sobre as criação da Marvel é o fato
+									que a maioria dos heróis não tem identidade secreta. O homem de ferro por exemplo não fez questão de esconder do mundo que ele ela o homem de ferro
+									</p>
+								</div>					
+								<div className='conteudo--banner'>
+									<img alt='banner' src={tony} ></img>
+									<p className='titulo'>Heróis entre nós</p>
+									<p className='descri'>Uma das curiosidade mais interessantes sobre as criação da Marvel é o fato
+									que a maioria dos heróis não tem identidade secreta. O homem de ferro por exemplo não fez questão de esconder do mundo que ele ela o homem de ferro
+									</p>
+								</div>
+								<div className='conteudo--banner'>
+									<img alt='banner' src={thor} ></img>
+									<p className='titulo'>Deuses e suas versões</p>
+									<p className='descri'>É comum a Marvel usar Deuses e mitologias em suas histórias. O Motoqueiro Fantasma por exemplo 
+									teve uma mudança em sua história por contas religiosas. A principio ele feito um pacto com o demônio da mitologia cristã, mas com o passar dos anos 
+									seu algoz se torno Mephisto </p>
+								</div>
+
 							</div>
 						</div>
 						<Logos logos={[marvel, avenger, selo, disney, anel, hydra]} ></Logos>
@@ -264,11 +259,6 @@ function App() {
 
 					<CuboGiratorio imagens={links}></CuboGiratorio>
 					<div className='filmes--sombra'></div>
-				</div>
-				<div className='compras'>
-					<BannerCompra cor={"rgba(27,31,144,1)"}></BannerCompra>
-					<BannerCompra cor={"rgba(145,141,144,1)"}></BannerCompra>
-					<BannerCompra cor={"rgba(145,141,144,1)"}></BannerCompra>
 				</div>
 				<Rodape></Rodape>
 		</div>
