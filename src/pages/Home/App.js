@@ -22,8 +22,6 @@ import lampada from "./lampada.png"
 import corda from "./chain.png"
 
 import Book from '../../componentes/Book';
-import { CuboGiratorio } from '../../componentes/CuboGiratorio';
-import BannerCompra from '../../componentes/BannerCompra';
 import tony from "./tony.jpg"
 import Logos from '../../componentes/Logos';
 import marvel from "./marvel.png"
@@ -42,20 +40,28 @@ function App() {
 	const [ margin, setmargin] =useState(0)
 	const importAll = (r) => r.keys().map(r);
 
-	const filmes = importAll(require.context('./linha', false, /\.(png|jpe?g|svg)$/));
+	const images = importAll(require.context('./linha', false, /\.(png|jpe?g|svg)$/));
+	const filmes = images.sort((a, b) => {
+		// Extraia os números dos nomes dos arquivos
+		const numberA = parseInt(a.match(/\d+/)[0], 10);
+		const numberB = parseInt(b.match(/\d+/)[0], 10);
+		
+		// Compare os números extraídos
+		return numberA - numberB;
+	  });	
 	function prevSlide(){
 		if(margin<100){
 			setmargin(margin+100)
 		}
 	}
-	  const nextSlide = () => {
-		if(margin== -100){
-		}
-		else{
-			setmargin(margin-100)
-		}
-	  }
-	  function gerarNumeroAleatorio(minimo, maximo) {
+	const nextSlide = () => {
+	if(margin== -100){
+	}
+	else{
+		setmargin(margin-100)
+	}
+	}
+	function gerarNumeroAleatorio(minimo, maximo) {
 		return Math.floor(Math.random() * (maximo - minimo + 1)) + minimo;
 	}
 	const {price, setprice, listahq, setlistahq, imagemBanner, setimagemBanner, 
@@ -261,14 +267,14 @@ function App() {
 						<div className='filme'>
 							{filmes.map((item, index) =>(
 								index%2===0?
-								(<div style={{"--i":gerarNumeroAleatorio(25, 45)+"px", background:"url("+item+")", backgroundSize:"contain", backgroundRepeat:"no-repeat"}} key={index} className='cima'  ></div>):null
+								(<div style={{"--i":gerarNumeroAleatorio(25, 45), background:"url("+item+")", backgroundSize:"contain", backgroundRepeat:"no-repeat"}} key={index} className='cima'  ></div>):null
 							))}
 						</div>
 						<div className='linha'></div>
 						<div className='filme'>
 							{filmes.map((item, index) =>(
 								index%2 !==0?
-								(<div style={{"--i":gerarNumeroAleatorio(5, 25)+"px", background:"url("+item+")", backgroundSize:"contain", backgroundRepeat:"no-repeat"}} key={index} className='baixo'  ></div>):null
+								(<div style={{"--i":gerarNumeroAleatorio(25, 45), background:"url("+item+")", backgroundSize:"contain", backgroundRepeat:"no-repeat"}} key={index} className='baixo'  ></div>):null
 							))}
 						</div>
 
