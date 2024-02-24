@@ -33,40 +33,6 @@ import disney from "./disney.png"
 import hydra from "./hydra.png"
 import anel from "./anel.png"
 import thor from "./thor.jpg"
-import um from "./linha/1.png"
-import dois from "./linha/2.png"
-import tres from "./linha/3.png"
-import quatro from "./linha/4.png"
-import cinco from "./linha/5.png"
-import seis from "./linha/6.png"
-import sete from "./linha/7.webp"
-import oito from "./linha/8.png"
-import nove from "./linha/9.png"
-import dez from "./linha/10.png"
-import onze from "./linha/11.png"
-import doze from "./linha/12.png"
-import treze from "./linha/13.png"
-import quatorze from "./linha/14.png"
-import quinze from "./linha/15.png"
-import dezesseis from "./linha/16.png"
-import dezesette from "./linha/17.png"
-import dezoito from "./linha/18.png"
-import dezenove from "./linha/19.png"
-import vinte from "./linha/20.png"
-import vinte1 from "./linha/21.png"
-import vinte2 from "./linha/22.png"
-import vinte3 from "./linha/23.png"
-import vinte4 from "./linha/24.png"
-import vinte5 from "./linha/25.png"
-import vinte6 from "./linha/26.png"
-import vinte7 from "./linha/27.png"
-import vinte8 from "./linha/28.png"
-import vinte9 from "./linha/29.png"
-import trinta from "./linha/30.png"
-import trinta1 from "./linha/31.png"
-import trinta2 from "./linha/32.png"
-
-
 
 
 function App() {
@@ -224,11 +190,13 @@ function App() {
 							<i onClick={() =>nextSlide()} >&gt;</i>
 							<div className='carrosel' style={{left:margin+"%"}}>
 								<div className='conteudo--banner'>
-									<img alt='banner' src={tony} ></img>
+									<img alt='banner' src={cap} ></img>
 									<p className='titulo'>Uma luz na excuridão</p>
-									<p className='descri'>Uma das curiosidade mais interessantes sobre as criação da Marvel é o fato
-									que a maioria dos heróis não tem identidade secreta. O homem de ferro por exemplo não fez questão de esconder do mundo que ele ela o homem de ferro
-									</p>
+									<p className='descri'>Em 1941 a Criação de Jack Kirby fazia sua
+									estreia extravagante. O infame personagem aparecia ,na capa da sua 
+									primeira revista, socando o próprio Hitler. Naquele contexto o super soldado não representava apenas 
+									o desejo dos aliados de vencer a guerra, mas também os pais maridos e filhos que saim de casa 
+									para preencher as trincheiras na guerra contra o os alemães</p>
 								</div>					
 								<div className='conteudo--banner'>
 									<img alt='banner' src={tony} ></img>
