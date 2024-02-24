@@ -33,44 +33,16 @@ import disney from "./disney.png"
 import hydra from "./hydra.png"
 import anel from "./anel.png"
 import thor from "./thor.jpg"
-
+import cap from "./cap.jpg"
 
 function App() {
 	const [caregando ,setcaregando] = useState(false)
 	const [ativo, setativo] = useState(false)
 	const [ rotation, setrotation] = useState(0)
 	const [ margin, setmargin] =useState(0)
-	const filmes = [um,
-		dois,
-		tres,
-		quatro,
-		cinco,
-		seis,
-		oito,
-		nove,
-		dez,
-		onze,
-		doze,
-		treze,
-		quatorze,
-		quinze,
-		dezesseis,
-		dezesette,
-		dezoito,
-		dezenove,
-		vinte,
-		vinte1,
-		vinte2,
-		vinte3,
-		vinte4,
-		vinte5,
-		vinte6,
-		vinte7,
-		vinte8,
-		vinte9,
-		trinta,
-		trinta1,
-		trinta2,] 
+	const importAll = (r) => r.keys().map(r);
+
+	const filmes = importAll(require.context('./linha', false, /\.(png|jpe?g|svg)$/));
 	function prevSlide(){
 		if(margin<100){
 			setmargin(margin+100)

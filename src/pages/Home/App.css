@@ -400,17 +400,19 @@
   height:400px;
 }
 .filme{
+  align-items: flex-end;
   height: 100px;
   width: 100%;
   display: flex;
 }
 .cima{
-  margin-bottom: calc(-1*var(--i));
+  position: relative;
+  bottom: var(--i);
 }
 .cima, .baixo{
   display: block;
   width: 120px;
-  height: 60px;
+  height: 40px;
 }
 .cima::after{
   z-index: 3;
@@ -419,6 +421,7 @@
   content: "";
   height: var(--i);
   margin-top: 40px;
+  margin-left: 40px;
   width: 3px;
 }
 .baixo::before{
