@@ -33,19 +33,78 @@ import disney from "./disney.png"
 import hydra from "./hydra.png"
 import anel from "./anel.png"
 import thor from "./thor.jpg"
+import um from "./linha/1.png"
+import dois from "./linha/2.png"
+import tres from "./linha/3.png"
+import quatro from "./linha/4.png"
+import cinco from "./linha/5.png"
+import seis from "./linha/6.png"
+import sete from "./linha/7.webp"
+import oito from "./linha/8.png"
+import nove from "./linha/9.png"
+import dez from "./linha/10.png"
+import onze from "./linha/11.png"
+import doze from "./linha/12.png"
+import treze from "./linha/13.png"
+import quatorze from "./linha/14.png"
+import quinze from "./linha/15.png"
+import dezesseis from "./linha/16.png"
+import dezesette from "./linha/17.png"
+import dezoito from "./linha/18.png"
+import dezenove from "./linha/19.png"
+import vinte from "./linha/20.png"
+import vinte1 from "./linha/21.png"
+import vinte2 from "./linha/22.png"
+import vinte3 from "./linha/23.png"
+import vinte4 from "./linha/24.png"
+import vinte5 from "./linha/25.png"
+import vinte6 from "./linha/26.png"
+import vinte7 from "./linha/27.png"
+import vinte8 from "./linha/28.png"
+import vinte9 from "./linha/29.png"
+import trinta from "./linha/30.png"
+import trinta1 from "./linha/31.png"
+import trinta2 from "./linha/32.png"
+
+
 
 
 function App() {
-	const links = ["https://s2.glbimg.com/n3WM9f6PAk5vmhgKXD9R9lI0nsg=/0x0:1400x1016/924x0/smart/filters:strip_icc()/i.s3.glbimg.com/v1/AUTH_b0f0e84207c948ab8b8777be5a6a4395/internal_photos/bs/2022/V/V/1Av89fSlK7pp1P9IDuqw/pantera-negra-wakanda-forever.png",
-	 "https://osrabiscosdageadas.com/wp-content/uploads/2022/09/p_thorloveandthunder_639_593cb642.jpeg"
-	, "https://br.web.img3.acsta.net/c_310_420/pictures/22/10/25/09/01/1618750.jpg", 
-	"https://br.web.img3.acsta.net/pictures/22/02/14/18/29/1382589.png"]
 	const [caregando ,setcaregando] = useState(false)
-	const history = useHistory()
 	const [ativo, setativo] = useState(false)
 	const [ rotation, setrotation] = useState(0)
 	const [ margin, setmargin] =useState(0)
-	const [currentIndex, setCurrentIndex] = useState(0);
+	const filmes = [um,
+		dois,
+		tres,
+		quatro,
+		cinco,
+		seis,
+		oito,
+		nove,
+		dez,
+		onze,
+		doze,
+		treze,
+		quatorze,
+		quinze,
+		dezesseis,
+		dezesette,
+		dezoito,
+		dezenove,
+		vinte,
+		vinte1,
+		vinte2,
+		vinte3,
+		vinte4,
+		vinte5,
+		vinte6,
+		vinte7,
+		vinte8,
+		vinte9,
+		trinta,
+		trinta1,
+		trinta2,] 
 	function prevSlide(){
 		if(margin<100){
 			setmargin(margin+100)
@@ -58,7 +117,9 @@ function App() {
 			setmargin(margin-100)
 		}
 	  }
-	
+	  function gerarNumeroAleatorio(minimo, maximo) {
+		return Math.floor(Math.random() * (maximo - minimo + 1)) + minimo;
+	}
 	const {price, setprice, listahq, setlistahq, imagemBanner, setimagemBanner, 
 		tituloBanner, settituloBanner, descricaoBanner, 
 		setdescricaoBanner, criadoresBanner, setcriadoresBanner, idBanner, setidBanner} = React.useContext(StoreContext)
@@ -252,13 +313,26 @@ function App() {
 						</div>
 				</div>
 				<div className='filmes'>
-					<h2>Filmes baseados em HQ</h2>
+					<h2>Linha Cronológica</h2>
 					<p>Os filmes de super-herois levam multidões para as salas fazendo com que se mantenha viva a 
 						cultura do cinema, mesmo em meio aos gigantes serviços de streaming. E esses filmes por sua vez são baseado em obras e quadrinhos dos mais variados tipos. 
 						E só aqui você encontra diversos deles. No fim o que você vê na tela teve início em uma folha de papelem branco</p>
+					<div className='cronologia'>
+						<div className='filme'>
+							{filmes.map((item, index) =>(
+								index%2===0?
+								(<div style={{"--i":gerarNumeroAleatorio(25, 45)+"px", background:"url("+item+")", backgroundSize:"contain", backgroundRepeat:"no-repeat"}} key={index} className='cima'  ></div>):null
+							))}
+						</div>
+						<div className='linha'></div>
+						<div className='filme'>
+							{filmes.map((item, index) =>(
+								index%2 !==0?
+								(<div style={{"--i":gerarNumeroAleatorio(5, 25)+"px", background:"url("+item+")", backgroundSize:"contain", backgroundRepeat:"no-repeat"}} key={index} className='baixo'  ></div>):null
+							))}
+						</div>
 
-					<CuboGiratorio imagens={links}></CuboGiratorio>
-					<div className='filmes--sombra'></div>
+					</div>
 				</div>
 				<Rodape></Rodape>
 		</div>
