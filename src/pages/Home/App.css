@@ -13,7 +13,7 @@
 }
 .conteudo--banner:nth-child(1) .descri{
   top: 170px;
-  font-size: 18px;
+  font-size: 15px;
 }
 .conteudo--banner:nth-child(1)::before{
   content: "";
@@ -21,7 +21,7 @@
   height: 100%;
   position: absolute;
   z-index: 3;
-  box-shadow: inset 0px 0px 36rem 16rem black;
+  box-shadow: inset 0px 0px 16rem 46rem rgba(0, 0, 0, 0.801);
 }
 .conteudo--banner{
   flex-shrink: 0;
@@ -45,7 +45,7 @@
   justify-content: center;
   overflow-x: hidden;
   overflow-y: hidden;  
-  height: 20%;
+  height: 500px;
 }
 .conteudo--carrosel i{
   position: absolute;
@@ -104,7 +104,7 @@
   z-index: 3;
   color: white;
   position: absolute;
-  font-size: 20px;
+  font-size: 15px;
   font-weight: 100; 
 }
 

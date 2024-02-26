@@ -3,6 +3,7 @@ import './index.css'
 import Logo from '../../icon/marvel.png'
 import Escudo from '../../icon/escudo.png'
 import { useHistory } from "react-router-dom";
+import descer from "../../MoverScroll"
 
 export default function Cabecalho(){
     const history = useHistory()
@@ -31,8 +32,12 @@ export default function Cabecalho(){
       })
     return(
         <header className={exibir? 'exibir': ''}>
-            <img style={{transform:'rotate('+rotation+'deg)'}} className="escudo" src={Escudo} alt="escudo"></img>
             <img onClick={() => history.push('/')} className="logo" alt="logo" src={Logo}></img>
+            <div className="titulos">
+              <p onClick={() => descer(".conteudo--titulo")}>Histórias</p>
+              <p onClick={() => descer(".conteudo--curiosidade")}>Você Sabia?</p>
+              <p onClick={() => descer(".filmes")}>Linha Cronológica</p>
+            </div>
         </header>
     )
 }
