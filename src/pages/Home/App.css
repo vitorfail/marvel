@@ -159,11 +159,12 @@
   justify-content: center;
   flex-direction: column;
   width: 240px;
-  margin: 24px;
 }
 .conteudo--book p{
-  width: 90%;
-  text-align: center;
+  color: rgb(49, 49, 49);
+  width: 87%;
+  font-size: 15px;
+  text-align: left;
 }
 .conteudo--item--price{
   height: 8%;
